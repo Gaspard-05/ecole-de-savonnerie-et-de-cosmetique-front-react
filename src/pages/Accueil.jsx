@@ -6,7 +6,8 @@ import SectionCTA from "../components/SectionCTA";
 import FormationCard from "../components/FormationCard";
 import TestimonialCard from "../components/TestimonialCard";
 import StatBlock from "../components/StatBlock";
-import { formations } from "../data/formations";
+import { useFetch } from "../hooks/useFetch";
+import { formations as formationsMock } from "../data/formations";
 import { temoignages } from "../data/temoignages";
 import "./Accueil.css";
 
@@ -34,6 +35,8 @@ const atouts = [
 ];
 
 function Accueil() {
+  const { data } = useFetch("/formations", { fallback: formationsMock });
+  const formations = Array.isArray(data) ? data : data?.data ?? [];
   const formationsAffichees = formations.slice(0, 3);
   const temoignagesAffiches = temoignages.slice(0, 3);
 

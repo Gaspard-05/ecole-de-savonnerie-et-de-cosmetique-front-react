@@ -12,7 +12,7 @@ function FormationCard({ formation }) {
       </Link>
       <div className="formation-card__body">
         <h3>{formation.nom}</h3>
-        <p>{formation.resume}</p>
+        <p>{formation.resume ?? formation.description}</p>
         <Link to={`/formations/${formation.slug}`} className="formation-card__link">
           Découvrir la formation <ArrowRight size={16} />
         </Link>
