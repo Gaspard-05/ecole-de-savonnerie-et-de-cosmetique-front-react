@@ -1,0 +1,12 @@
+.admin-chart-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 22px 18px 12px;
+}
+
+.admin-chart-card h3 {
+  margin: 0 0 18px 6px;
+  font-size: 17px;
+}

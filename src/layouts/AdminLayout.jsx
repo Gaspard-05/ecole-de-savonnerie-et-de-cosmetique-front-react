@@ -1,0 +1,46 @@
+import { useState } from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { Menu } from "lucide-react";
+import Sidebar from "../components/admin/Sidebar";
+import { isAuthenticated } from "../lib/auth";
+import "./AdminLayout.css";
+
+function AdminLayout() {
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  if (!isAuthenticated()) {
+    return <Navigate to="/connexion" replace />;
+  }
+
+  return (
+    <div className="admin-layout">
+      <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
+
+      {sidebarOpen && (
+        <button
+          type="button"
+          className="admin-layout__overlay"
+          aria-label="Fermer le menu"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
+
+      <div className="admin-content">
+        <button
+          type="button"
+          className="admin-layout__burger"
+          onClick={() => setSidebarOpen(true)}
+          aria-label="Ouvrir le menu"
+        >
+          <Menu size={22} />
+        </button>
+
+        <main className="admin-layout__main">
+          <Outlet />
+        </main>
+      </div>
+    </div>
+  );
+}
+
+export default AdminLayout;

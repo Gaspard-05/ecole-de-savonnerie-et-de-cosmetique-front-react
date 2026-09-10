@@ -1,0 +1,16 @@
+.mentions__inner {
+  max-width: 760px;
+}
+
+.mentions h1 {
+  margin-bottom: 32px;
+}
+
+.mentions h2 {
+  font-size: 1.2rem;
+  margin-top: 32px;
+}
+
+.mentions p {
+  font-size: 16px;
+}

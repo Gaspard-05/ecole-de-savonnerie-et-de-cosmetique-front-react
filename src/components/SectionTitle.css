@@ -1,0 +1,29 @@
+.section-title {
+  margin-bottom: 40px;
+}
+
+.section-title h6 {
+  margin-bottom: 10px;
+}
+
+.section-title h2 {
+  margin-bottom: 12px;
+}
+
+.section-title__desc {
+  max-width: 620px;
+  font-size: 17px;
+}
+
+.section-title--center {
+  text-align: center;
+}
+
+.section-title--center .section-title__desc {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-title--left {
+  text-align: left;
+}

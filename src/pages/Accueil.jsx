@@ -1,0 +1,169 @@
+import { Link } from "react-router-dom";
+import { Sparkles, GraduationCap, Users, Award } from "lucide-react";
+import Button from "../components/Button";
+import SectionTitle from "../components/SectionTitle";
+import SectionCTA from "../components/SectionCTA";
+import FormationCard from "../components/FormationCard";
+import TestimonialCard from "../components/TestimonialCard";
+import StatBlock from "../components/StatBlock";
+import { formations } from "../data/formations";
+import { temoignages } from "../data/temoignages";
+import "./Accueil.css";
+
+const atouts = [
+  {
+    icon: Sparkles,
+    titre: "100% pratique",
+    texte: "Des ateliers en petits groupes, orientés fabrication réelle dès le premier jour.",
+  },
+  {
+    icon: Users,
+    titre: "Accompagnement personnalisé",
+    texte: "Un suivi individuel pendant et après la formation pour lancer votre activité.",
+  },
+  {
+    icon: Award,
+    titre: "Double certification",
+    texte: "Certification ESC et CQM reconnues, gage de crédibilité auprès de vos clients.",
+  },
+  {
+    icon: GraduationCap,
+    titre: "Réseau de partenaires",
+    texte: "Accès à des fournisseurs et partenaires pour démarrer votre activité sereinement.",
+  },
+];
+
+function Accueil() {
+  const formationsAffichees = formations.slice(0, 3);
+  const temoignagesAffiches = temoignages.slice(0, 3);
+
+  return (
+    <>
+      <section className="hero">
+        <div className="container hero__inner">
+          <div className="hero__text">
+            <h6>École de Savonnerie et de Cosmétique</h6>
+            <h1>Transformez votre passion en activité professionnelle</h1>
+            <p>
+              Formations pratiques en savonnerie, cosmétique, capillaire et artisanat : apprenez un
+              savoir-faire recherché et lancez votre propre activité en quelques semaines.
+            </p>
+            <div className="hero__actions">
+              <Button to="/preinscription" variant="primary" size="lg">
+                Se pré-inscrire
+              </Button>
+              <Button to="/formations" variant="outline" size="lg">
+                Voir les formations
+              </Button>
+            </div>
+          </div>
+          <div className="hero__media">
+            <img
+              src="https://images.unsplash.com/photo-1556760544-74068565f05c?w=900&q=80"
+              alt="Apprentie en pleine fabrication artisanale lors d'un atelier ESC"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="presentation">
+        <div className="container presentation__inner">
+          <div className="presentation__media">
+            <img
+              src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800&q=80"
+              alt="Formatrice ESC accompagnant une apprenante"
+            />
+          </div>
+          <div className="presentation__text">
+            <h6>Qui sommes-nous ?</h6>
+            <h2>L'ESC, l'école qui forme les entrepreneures de demain</h2>
+            <p>
+              Depuis sa création, l'ESC forme des femmes aux métiers pratiques de la cosmétique et de
+              l'artisanat. Notre pédagogie 100% pratique et notre accompagnement post-formation ont déjà
+              permis à des centaines de diplômées de lancer leur propre activité.
+            </p>
+            <Button to="/ecole" variant="secondary">
+              Découvrir l'École
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="atouts">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Pourquoi choisir l'ESC ?"
+            title="Une formation pensée pour votre réussite"
+            description="Un cadre d'apprentissage exigeant et bienveillant pour vous donner toutes les clés d'une activité rentable."
+          />
+          <div className="atouts__grid">
+            {atouts.map((atout) => (
+              <div className="atout-card" key={atout.titre}>
+                <atout.icon className="atout-card__icon" size={30} aria-hidden="true" />
+                <h3>{atout.titre}</h3>
+                <p>{atout.texte}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="formations-preview">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Nos formations"
+            title="9 spécialités pour se former à un métier concret"
+            description="De la savonnerie à la décoration en Gypsum, choisissez la formation qui correspond à votre projet."
+          />
+          <div className="formations-preview__grid">
+            {formationsAffichees.map((formation) => (
+              <FormationCard key={formation.id} formation={formation} />
+            ))}
+          </div>
+          <div className="formations-preview__more">
+            <Button to="/formations" variant="outline" size="lg">
+              Voir toutes les formations
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      <section className="chiffres">
+        <div className="container chiffres__grid">
+          <StatBlock value="9" label="spécialités de formation" />
+          <StatBlock value="100%" label="pratique dès le premier jour" />
+          <StatBlock value="99%" label="lancent leur activité en 3 mois" />
+        </div>
+      </section>
+
+      <section className="temoignages-preview">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Elles témoignent"
+            title="La réussite de nos diplômées"
+            description="Des parcours inspirants, portés par un accompagnement de proximité."
+          />
+          <div className="temoignages-preview__grid">
+            {temoignagesAffiches.map((temoignage) => (
+              <TestimonialCard key={temoignage.id} temoignage={temoignage} />
+            ))}
+          </div>
+          <div className="formations-preview__more">
+            <Link to="/temoignages" className="btn btn--ghost">
+              Voir tous les témoignages →
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <SectionCTA
+        title="Prêt(e) à transformer votre passion en activité ?"
+        description="Réservez votre place dès aujourd'hui : notre équipe vous accompagne à chaque étape."
+        buttonLabel="Se pré-inscrire"
+        buttonTo="/preinscription"
+      />
+    </>
+  );
+}
+
+export default Accueil;

@@ -1,0 +1,43 @@
+.preinscription {
+  background: var(--color-bg-alt);
+  min-height: calc(100svh - 76px);
+  display: flex;
+  align-items: center;
+}
+
+.preinscription__inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.preinscription__intro h6 {
+  margin-bottom: 10px;
+}
+
+.preinscription__intro p {
+  font-size: 17px;
+}
+
+.preinscription__intro strong {
+  color: var(--color-primary);
+}
+
+.preinscription__card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 36px;
+  box-shadow: var(--shadow-md);
+}
+
+@media (max-width: 900px) {
+  .preinscription__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .preinscription__card {
+    padding: 26px;
+  }
+}

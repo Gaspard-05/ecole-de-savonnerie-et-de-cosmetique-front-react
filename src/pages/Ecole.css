@@ -1,0 +1,147 @@
+.ecole-mission__inner {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.ecole-mission__media img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+}
+
+.ecole-mission h6 {
+  margin-bottom: 10px;
+}
+
+.ecole-approche {
+  background: var(--color-bg-alt);
+}
+
+.ecole-approche__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.ecole-approche__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 30px 24px;
+  text-align: center;
+}
+
+.ecole-approche__icon {
+  color: var(--color-secondary);
+  margin-bottom: 14px;
+}
+
+.ecole-avantages__inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.ecole-avantages h6 {
+  margin-bottom: 10px;
+}
+
+.ecole-avantages__list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.ecole-avantages__list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--color-text);
+  font-size: 16px;
+}
+
+.ecole-avantages__list svg {
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.ecole-avantages__media img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  aspect-ratio: 4 / 3.4;
+  object-fit: cover;
+  box-shadow: var(--shadow-md);
+}
+
+.ecole-certification {
+  background: var(--color-primary);
+}
+
+.ecole-certification__inner,
+.ecole-reseau__inner {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.ecole-certification__inner h2,
+.ecole-certification__inner p {
+  color: var(--color-white);
+}
+
+.ecole-certification__inner p {
+  opacity: 0.88;
+  margin: 0;
+}
+
+.ecole-certification__icon {
+  color: var(--color-secondary-light);
+  flex-shrink: 0;
+}
+
+.ecole-reseau {
+  background: var(--color-accent-light);
+}
+
+.ecole-reseau__inner h2 {
+  color: var(--color-accent-dark);
+}
+
+.ecole-reseau__inner p {
+  margin: 0;
+}
+
+.ecole-reseau__icon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .ecole-mission__inner,
+  .ecole-avantages__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .ecole-mission__media,
+  .ecole-avantages__media {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .ecole-approche__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecole-certification__inner,
+  .ecole-reseau__inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}

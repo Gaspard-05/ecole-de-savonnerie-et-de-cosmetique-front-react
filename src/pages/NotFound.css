@@ -1,0 +1,23 @@
+.not-found {
+  min-height: calc(100svh - 76px);
+  display: flex;
+  align-items: center;
+}
+
+.not-found__inner {
+  text-align: center;
+}
+
+.not-found h1 {
+  font-size: clamp(3.5rem, 3rem + 3vw, 6rem);
+  color: var(--color-secondary);
+  margin-bottom: 0;
+}
+
+.not-found__actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}

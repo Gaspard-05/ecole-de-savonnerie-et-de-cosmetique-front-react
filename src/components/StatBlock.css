@@ -1,0 +1,24 @@
+.stat-block {
+  text-align: center;
+  padding: 20px 12px;
+}
+
+.stat-block__icon {
+  color: var(--color-secondary);
+  margin-bottom: 10px;
+}
+
+.stat-block__value {
+  font-size: clamp(2rem, 1.7rem + 1vw, 2.6rem);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+  margin: 0 0 4px;
+  font-family: var(--font-base);
+}
+
+.stat-block__label {
+  color: var(--color-primary-light);
+  opacity: 0.9;
+  font-size: 15px;
+  margin: 0;
+}
