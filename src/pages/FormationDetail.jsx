@@ -4,20 +4,40 @@ import Button from "../components/Button";
 import SectionTitle from "../components/SectionTitle";
 import TestimonialCard from "../components/TestimonialCard";
 import FormationCard from "../components/FormationCard";
-import { formatPrix, getFormationBySlug, getFormationsSimilaires } from "../data/formations";
+import { useFetch } from "../hooks/useFetch";
+import { formatPrix, getFormationBySlug, getFormationsSimilaires, formations as formationsMock } from "../data/formations";
 import { getTemoignageByFormationSlug } from "../data/temoignages";
 import "./FormationDetail.css";
 
+const INCLUS = [
+  "Kit de matières premières pour la pratique",
+  "Support de cours illustré",
+  "Suivi personnalisé après la formation",
+  "Accès au réseau de partenaires fournisseurs",
+];
+
+const MODALITES = "Présentiel, ateliers pratiques en petit groupe";
+const CERTIFICATION = "Certification ESC + CQM (Certificat de Qualification aux Métiers)";
+
 function FormationDetail() {
   const { slug } = useParams();
-  const formation = getFormationBySlug(slug);
+
+  const { data, loading } = useFetch(`/formations/${slug}`, { fallback: getFormationBySlug(slug) });
+  const formation = data?.data ?? data;
+
+  const { data: allData } = useFetch("/formations", { fallback: formationsMock });
+  const allFormations = Array.isArray(allData) ? allData : allData?.data ?? [];
+  const similaires = allFormations.length > 0
+    ? allFormations.filter((f) => f.slug !== slug).slice(0, 3)
+    : getFormationsSimilaires(slug);
+
+  if (loading) return null;
 
   if (!formation) {
     return <Navigate to="/formations" replace />;
   }
 
   const temoignage = getTemoignageByFormationSlug(slug);
-  const similaires = getFormationsSimilaires(slug);
 
   return (
     <>
@@ -45,7 +65,7 @@ function FormationDetail() {
               <ListChecks size={24} aria-hidden="true" /> Ce que vous allez apprendre
             </h2>
             <ul className="formation-detail-list">
-              {formation.apprentissages.map((item) => (
+              {(formation.modules ?? formation.apprentissages ?? []).map((item) => (
                 <li key={item}>
                   <CheckCircle2 size={18} aria-hidden="true" />
                   <span>{item}</span>
@@ -59,7 +79,7 @@ function FormationDetail() {
               <TrendingUp size={24} aria-hidden="true" /> Débouchés &amp; possibilités d'activité
             </h2>
             <ul className="formation-detail-list">
-              {formation.debouches.map((item) => (
+              {(formation.debouches ?? []).map((item) => (
                 <li key={item}>
                   <CheckCircle2 size={18} aria-hidden="true" />
                   <span>{item}</span>
@@ -73,7 +93,7 @@ function FormationDetail() {
               <PackageCheck size={24} aria-hidden="true" /> Inclus dans l'accompagnement
             </h2>
             <ul className="formation-detail-list">
-              {formation.inclus.map((item) => (
+              {INCLUS.map((item) => (
                 <li key={item}>
                   <CheckCircle2 size={18} aria-hidden="true" />
                   <span>{item}</span>
@@ -93,12 +113,12 @@ function FormationDetail() {
               </div>
               <div>
                 <dt>Modalités</dt>
-                <dd>{formation.modalites}</dd>
+                <dd>{MODALITES}</dd>
               </div>
               <div>
                 <dt>Certification</dt>
                 <dd>
-                  <GraduationCap size={16} aria-hidden="true" /> {formation.certification}
+                  <GraduationCap size={16} aria-hidden="true" /> {CERTIFICATION}
                 </dd>
               </div>
             </dl>

@@ -35,9 +35,10 @@ const atouts = [
 ];
 
 function Accueil() {
-  const { data } = useFetch("/formations", { fallback: formationsMock });
+  const { data, loading } = useFetch("/formations", { fallback: formationsMock });
   const formations = Array.isArray(data) ? data : data?.data ?? [];
   const formationsAffichees = formations.slice(0, 3);
+  const nombreFormations = loading ? "Nos" : formations.length;
   const temoignagesAffiches = temoignages.slice(0, 3);
 
   return (
@@ -115,7 +116,7 @@ function Accueil() {
         <div className="container">
           <SectionTitle
             eyebrow="Nos formations"
-            title="9 spécialités pour se former à un métier concret"
+            title={`${nombreFormations} spécialités pour se former à un métier concret`}
             description="De la savonnerie à la décoration en Gypsum, choisissez la formation qui correspond à votre projet."
           />
           <div className="formations-preview__grid">
@@ -133,7 +134,7 @@ function Accueil() {
 
       <section className="chiffres">
         <div className="container chiffres__grid">
-          <StatBlock value="9" label="spécialités de formation" />
+          <StatBlock value={`${nombreFormations}`} label="spécialités de formation" />
           <StatBlock value="100%" label="pratique dès le premier jour" />
           <StatBlock value="99%" label="lancent leur activité en 3 mois" />
         </div>

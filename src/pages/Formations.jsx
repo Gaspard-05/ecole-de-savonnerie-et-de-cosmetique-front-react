@@ -13,7 +13,7 @@ function Formations() {
       <section className="page-hero">
         <div className="container">
           <h6>Nos formations</h6>
-          <h1>{formations.length} spécialités pour bâtir votre activité</h1>
+          <h1>{loading ? "Nos" : formations.length} spécialités pour bâtir votre activité</h1>
           <p>
             Chaque formation est 100% pratique et débouche sur une double certification ESC + CQM.
             Choisissez la spécialité qui correspond à votre projet et démarrez rapidement.
