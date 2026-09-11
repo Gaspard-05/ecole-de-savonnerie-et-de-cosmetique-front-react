@@ -20,6 +20,7 @@ import FormationDetailAdmin from "../pages/admin/FormationDetailAdmin";
 import AjouterFormation from "../pages/admin/AjouterFormation";
 import ModifierFormation from "../pages/admin/ModifierFormation";
 import Prospects from "../pages/admin/Prospects";
+import TelechargementsAdmin from "../pages/admin/TelechargementsAdmin";
 import TemoignagesAdmin from "../pages/admin/TemoignagesAdmin";
 import Messages from "../pages/admin/Messages";
 import Parametres from "../pages/admin/Parametres";
@@ -49,6 +50,7 @@ function AppRouter() {
           <Route path="/admin/formations/ajouter" element={<AjouterFormation />} />
           <Route path="/admin/formations/:slug/modifier" element={<ModifierFormation />} />
           <Route path="/admin/formations/:slug" element={<FormationDetailAdmin />} />
+          <Route path="/admin/telechargements" element={<TelechargementsAdmin />} />
           <Route path="/admin/prospects" element={<Prospects />} />
           <Route path="/admin/temoignages" element={<TemoignagesAdmin />} />
           <Route path="/admin/messages" element={<Messages />} />

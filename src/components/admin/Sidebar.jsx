@@ -1,11 +1,12 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { LayoutDashboard, BookOpen, Users, Star, Mail, Settings, LogOut, X } from "lucide-react";
+import { LayoutDashboard, BookOpen, Download, Users, Star, Mail, Settings, LogOut, X } from "lucide-react";
 import { logout } from "../../lib/auth";
 import "./Sidebar.css";
 
 const LINKS = [
   { to: "/admin/dashboard", label: "Tableau de bord", icon: LayoutDashboard },
   { to: "/admin/formations", label: "Formations", icon: BookOpen },
+  { to: "/admin/telechargements", label: "Téléchargements", icon: Download },
   { to: "/admin/prospects", label: "Prospects", icon: Users },
   { to: "/admin/temoignages", label: "Témoignages", icon: Star },
   { to: "/admin/messages", label: "Messages", icon: Mail },

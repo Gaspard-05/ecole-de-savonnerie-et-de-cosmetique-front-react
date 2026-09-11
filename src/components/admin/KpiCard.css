@@ -3,17 +3,17 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  padding: 22px 20px;
+  padding: 12px 16px 8px;
 }
 
 .kpi-card__badge {
-  width: 44px;
-  height: 44px;
+  width: 30px;
+  height: 30px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 6px;
 }
 
 .kpi-card__badge--primary {
@@ -33,14 +33,14 @@
 
 .kpi-card__value {
   font-family: var(--font-base);
-  font-size: 26px;
+  font-size: 22px;
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
-  margin: 0 0 4px;
+  margin: 0 0 2px;
 }
 
 .kpi-card__label {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--color-text-muted);
   margin: 0;
 }
