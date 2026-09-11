@@ -1,15 +1,24 @@
 import { useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import Swal from "sweetalert2";
 import Button from "./Button";
 import { formations as formationsMock } from "../data/formations";
 import { useFetch, postJSON } from "../hooks/useFetch";
 import "./Form.css";
 
-const initialState = { formationSlug: "", nom: "", email: "", message: "" };
+const initialState = { formationSlug: "", nom: "", tel: "", email: "", message: "" };
+
+function getApiErrorMessage(err, fallback) {
+  const data = err.response?.data;
+  if (data?.errors) {
+    return Object.values(data.errors).flat().join(" ");
+  }
+  return data?.message || fallback;
+}
 
 function validate(values) {
   const errors = {};
   if (!values.nom.trim()) errors.nom = "Merci d'indiquer votre nom.";
+  if (!values.tel.trim()) errors.tel = "Merci d'indiquer votre numéro de téléphone.";
   if (!values.email.trim()) {
     errors.email = "Merci d'indiquer votre email.";
   } else if (!/^\S+@\S+\.\S+$/.test(values.email)) {
@@ -23,7 +32,6 @@ function ContactForm() {
   const [values, setValues] = useState(initialState);
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const { data } = useFetch("/formations", { fallback: formationsMock });
   const formations = Array.isArray(data) ? data : data?.data ?? [];
@@ -41,23 +49,27 @@ function ContactForm() {
 
     setSubmitting(true);
     try {
-      await postJSON("/contact", values);
-      setSubmitted(true);
-    } catch {
-      setErrors({ global: "Une erreur est survenue, merci de réessayer." });
+      await postJSON("/contact", {
+        type: "contact",
+        nom: values.nom,
+        tel: values.tel,
+        email: values.email,
+        formation: values.formationSlug || undefined,
+        message: values.message,
+      });
+      await Swal.fire({
+        icon: "success",
+        title: "Message envoyé",
+        text: "Votre message a été enregistré. L'école vous contactera pour plus d'éclaircissements.",
+        confirmButtonColor: "#905a01",
+      });
+      setValues(initialState);
+      setErrors({});
+    } catch (err) {
+      setErrors({ global: getApiErrorMessage(err, "Une erreur est survenue, merci de réessayer.") });
     } finally {
       setSubmitting(false);
     }
-  }
-
-  if (submitted) {
-    return (
-      <div className="form__success">
-        <CheckCircle2 size={48} className="form__success-icon" />
-        <h3>Message envoyé !</h3>
-        <p>Merci de nous avoir contactées, notre équipe vous répond sous 24 à 48h.</p>
-      </div>
-    );
   }
 
   return (
@@ -74,10 +86,18 @@ function ContactForm() {
         </select>
       </div>
 
-      <div className={`form__field ${errors.nom ? "form__field--error" : ""}`}>
-        <label htmlFor="nom">Nom complet</label>
-        <input id="nom" name="nom" type="text" value={values.nom} onChange={handleChange} />
-        {errors.nom && <span className="form__error">{errors.nom}</span>}
+      <div className="form__row">
+        <div className={`form__field ${errors.nom ? "form__field--error" : ""}`}>
+          <label htmlFor="nom">Nom complet</label>
+          <input id="nom" name="nom" type="text" value={values.nom} onChange={handleChange} />
+          {errors.nom && <span className="form__error">{errors.nom}</span>}
+        </div>
+
+        <div className={`form__field ${errors.tel ? "form__field--error" : ""}`}>
+          <label htmlFor="tel">Téléphone</label>
+          <input id="tel" name="tel" type="tel" value={values.tel} onChange={handleChange} />
+          {errors.tel && <span className="form__error">{errors.tel}</span>}
+        </div>
       </div>
 
       <div className={`form__field ${errors.email ? "form__field--error" : ""}`}>

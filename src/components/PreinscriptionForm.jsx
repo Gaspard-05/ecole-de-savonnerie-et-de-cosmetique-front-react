@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import Swal from "sweetalert2";
 import Button from "./Button";
 import { formations as formationsMock } from "../data/formations";
 import { useFetch, postJSON } from "../hooks/useFetch";
@@ -13,6 +13,14 @@ function getInitialState(preselectedSlug) {
     email: "",
     infosComplementaires: "",
   };
+}
+
+function getApiErrorMessage(err, fallback) {
+  const data = err.response?.data;
+  if (data?.errors) {
+    return Object.values(data.errors).flat().join(" ");
+  }
+  return data?.message || fallback;
 }
 
 function validate(values) {
@@ -32,7 +40,6 @@ function PreinscriptionForm({ preselectedSlug }) {
   const [values, setValues] = useState(() => getInitialState(preselectedSlug));
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const { data } = useFetch("/formations", { fallback: formationsMock });
   const formations = Array.isArray(data) ? data : data?.data ?? [];
@@ -50,26 +57,27 @@ function PreinscriptionForm({ preselectedSlug }) {
 
     setSubmitting(true);
     try {
-      await postJSON("/preinscriptions", values);
-      setSubmitted(true);
-    } catch {
-      setErrors({ global: "Une erreur est survenue, merci de réessayer." });
+      await postJSON("/contact", {
+        type: "pre_inscription",
+        nom: values.nomComplet,
+        tel: values.telephone,
+        email: values.email,
+        formation: values.formationSlug,
+        message: values.infosComplementaires || undefined,
+      });
+      await Swal.fire({
+        icon: "success",
+        title: "Pré-inscription enregistrée",
+        text: "Votre pré-inscription a été enregistrée. L'école vous contactera pour les procédures à suivre.",
+        confirmButtonColor: "#905a01",
+      });
+      setValues(getInitialState(preselectedSlug));
+      setErrors({});
+    } catch (err) {
+      setErrors({ global: getApiErrorMessage(err, "Une erreur est survenue, merci de réessayer.") });
     } finally {
       setSubmitting(false);
     }
-  }
-
-  if (submitted) {
-    return (
-      <div className="form__success">
-        <CheckCircle2 size={48} className="form__success-icon" />
-        <h3>Votre pré-inscription est enregistrée !</h3>
-        <p>
-          Merci {values.nomComplet.split(" ")[0] || ""} ! Notre équipe vous contactera très
-          prochainement au {values.telephone} pour finaliser votre inscription.
-        </p>
-      </div>
-    );
   }
 
   return (
