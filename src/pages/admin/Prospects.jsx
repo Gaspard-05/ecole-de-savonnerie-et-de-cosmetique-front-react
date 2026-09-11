@@ -39,7 +39,7 @@ function Prospects() {
                   <th>Téléphone</th>
                   <th>Email</th>
                   <th>Formation</th>
-                  <th>Message</th>
+                  {/* <th>Message</th> — masqué pour le moment */}
                   <th>Statut</th>
                   <th>Date</th>
                 </tr>
@@ -51,7 +51,7 @@ function Prospects() {
                     <td>{item.prospect?.telephone ?? "—"}</td>
                     <td>{item.prospect?.email ?? "—"}</td>
                     <td>{item.formation?.nom ?? "—"}</td>
-                    <td className="admin-prospects__message">{item.message || "—"}</td>
+                    {/* <td className="admin-prospects__message">{item.message || "—"}</td> — masqué pour le moment */}
                     <td>
                       <span className={`admin-prospects__statut admin-prospects__statut--${item.statut}`}>
                         {STATUT_LABELS[item.statut] ?? item.statut}
