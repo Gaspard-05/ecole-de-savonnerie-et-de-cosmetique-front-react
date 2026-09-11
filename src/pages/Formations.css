@@ -1,3 +1,9 @@
+.formations-grid__toolbar {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 26px;
+}
+
 .formations-grid__inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
