@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import Button from "./Button";
-import { formations } from "../data/formations";
-import { postJSON } from "../hooks/useFetch";
+import { formations as formationsMock } from "../data/formations";
+import { useFetch, postJSON } from "../hooks/useFetch";
 import "./Form.css";
 
 function getInitialState(preselectedSlug) {
@@ -33,6 +33,9 @@ function PreinscriptionForm({ preselectedSlug }) {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const { data } = useFetch("/formations", { fallback: formationsMock });
+  const formations = Array.isArray(data) ? data : data?.data ?? [];
 
   function handleChange(e) {
     const { name, value } = e.target;

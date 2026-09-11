@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { CheckCircle2 } from "lucide-react";
 import Button from "./Button";
-import { postJSON } from "../hooks/useFetch";
+import { formations as formationsMock } from "../data/formations";
+import { useFetch, postJSON } from "../hooks/useFetch";
 import "./Form.css";
 
-const initialState = { nom: "", email: "", message: "" };
+const initialState = { formationSlug: "", nom: "", email: "", message: "" };
 
 function validate(values) {
   const errors = {};
@@ -23,6 +24,9 @@ function ContactForm() {
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+
+  const { data } = useFetch("/formations", { fallback: formationsMock });
+  const formations = Array.isArray(data) ? data : data?.data ?? [];
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -58,6 +62,18 @@ function ContactForm() {
 
   return (
     <form className="form" onSubmit={handleSubmit} noValidate>
+      <div className="form__field">
+        <label htmlFor="formationSlug">Formation concernée (optionnel)</label>
+        <select id="formationSlug" name="formationSlug" value={values.formationSlug} onChange={handleChange}>
+          <option value="">Question générale</option>
+          {formations.map((f) => (
+            <option key={f.slug} value={f.slug}>
+              {f.nom}
+            </option>
+          ))}
+        </select>
+      </div>
+
       <div className={`form__field ${errors.nom ? "form__field--error" : ""}`}>
         <label htmlFor="nom">Nom complet</label>
         <input id="nom" name="nom" type="text" value={values.nom} onChange={handleChange} />
