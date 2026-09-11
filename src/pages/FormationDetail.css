@@ -40,6 +40,19 @@
   margin-bottom: 26px;
 }
 
+.formation-detail-hero__actions {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 14px;
+}
+
+@media (max-width: 480px) {
+  .formation-detail-hero__actions {
+    flex-wrap: wrap;
+  }
+}
+
 .formation-detail-body__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

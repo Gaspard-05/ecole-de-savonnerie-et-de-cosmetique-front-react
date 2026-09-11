@@ -1,10 +1,13 @@
+import { useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
-import { CheckCircle2, Clock, GraduationCap, ListChecks, PackageCheck, TrendingUp } from "lucide-react";
+import { CheckCircle2, Clock, Download, GraduationCap, ListChecks, PackageCheck, TrendingUp } from "lucide-react";
+import Swal from "sweetalert2";
 import Button from "../components/Button";
 import SectionTitle from "../components/SectionTitle";
 import TestimonialCard from "../components/TestimonialCard";
 import FormationCard from "../components/FormationCard";
 import { useFetch } from "../hooks/useFetch";
+import api from "../lib/api";
 import { formatPrix, getFormationBySlug, getFormationsSimilaires, formations as formationsMock } from "../data/formations";
 import { getTemoignageByFormationSlug } from "../data/temoignages";
 import "./FormationDetail.css";
@@ -21,9 +24,32 @@ const CERTIFICATION = "Certification ESC + CQM (Certificat de Qualification aux 
 
 function FormationDetail() {
   const { slug } = useParams();
+  const [downloadingPdf, setDownloadingPdf] = useState(false);
 
   const { data, loading } = useFetch(`/formations/${slug}`, { fallback: getFormationBySlug(slug) });
   const formation = data?.data ?? data;
+
+  async function handleDownloadPdf() {
+    setDownloadingPdf(true);
+    try {
+      const res = await api.get(`/formations/${slug}/pdf`, { responseType: "blob" });
+      const url = URL.createObjectURL(res.data);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `formation-${slug}.pdf`;
+      link.click();
+      URL.revokeObjectURL(url);
+    } catch {
+      Swal.fire({
+        icon: "error",
+        title: "Téléchargement impossible",
+        text: "Le PDF de cette formation n'a pas pu être généré, merci de réessayer.",
+        confirmButtonColor: "#905a01",
+      });
+    } finally {
+      setDownloadingPdf(false);
+    }
+  }
 
   const { data: allData } = useFetch("/formations", { fallback: formationsMock });
   const allFormations = Array.isArray(allData) ? allData : allData?.data ?? [];
@@ -51,9 +77,21 @@ function FormationDetail() {
             <h1>{formation.nom}</h1>
             <p className="formation-detail-hero__price">{formatPrix(formation.prix)}</p>
             <p>{formation.description}</p>
-            <Button to={`/preinscription?formation=${formation.slug}`} variant="primary" size="lg">
-              Je veux me pré-inscrire
-            </Button>
+            <div className="formation-detail-hero__actions">
+              <Button to={`/preinscription?formation=${formation.slug}`} variant="primary" size="lg">
+                Je veux me pré-inscrire
+              </Button>
+              <Button
+                type="button"
+                variant="outline"
+                size="lg"
+                onClick={handleDownloadPdf}
+                disabled={downloadingPdf}
+              >
+                <Download size={18} />
+                {downloadingPdf ? "Génération..." : "Télécharger la formation"}
+              </Button>
+            </div>
           </div>
         </div>
       </section>
