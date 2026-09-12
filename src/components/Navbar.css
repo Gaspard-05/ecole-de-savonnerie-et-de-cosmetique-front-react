@@ -106,7 +106,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--color-bg);
+    background: var(--color-primary);
+    box-shadow: var(--shadow-lg);
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -132,7 +133,12 @@
     width: 100%;
     padding: 14px 4px;
     font-size: 19px;
-    border-bottom: 1px solid var(--color-border);
+    color: var(--color-white);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .navbar__link--active {
+    color: var(--color-secondary-light);
   }
 
   .navbar__actions {
@@ -152,14 +158,15 @@
     gap: 8px;
     width: auto;
     padding: 0 12px;
+    color: var(--color-white);
   }
 }
 
-/* Tablette : le menu offcanvas n'occupe que 70% de la largeur, ancré à droite */
+/* Tablette : le menu offcanvas n'occupe que 40% de la largeur, ancré à droite */
 @media (min-width: 641px) and (max-width: 900px) {
   .navbar__nav {
     left: auto;
-    width: 70%;
+    width: 40%;
   }
 }
 
