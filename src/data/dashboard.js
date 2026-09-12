@@ -59,26 +59,3 @@ export const repartitionParFiliere = formations.map((formation, index) => ({
   value: ETUDIANTS_PAR_FORMATION[formation.slug] ?? 10,
   color: REPARTITION_COLORS[index % REPARTITION_COLORS.length],
 }));
-
-// Mock en attendant l'endpoint backend GET /api/admin/stats/telechargements
-// (voir documentation/Logique_Api.md) : remplacé automatiquement par les vraies
-// données dès que cette route existe côté Laravel.
-export const telechargementCatalogue = 57;
-
-const TELECHARGEMENTS_PAR_FORMATION = {
-  savonnerie: 34,
-  emulsion: 22,
-  solutions: 6,
-  anhydre: 9,
-  capillaire: 14,
-  detergents: 4,
-  "traitement-problemes-corporels": 11,
-  "bougie-decorative": 8,
-  "objet-decoration-gypsum": 5,
-};
-
-export const telechargementsParFiliere = formations.map((formation) => ({
-  filiere: formation.nom,
-  slug: formation.slug,
-  telechargements: TELECHARGEMENTS_PAR_FORMATION[formation.slug] ?? 0,
-}));

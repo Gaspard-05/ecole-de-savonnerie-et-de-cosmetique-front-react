@@ -2,20 +2,18 @@ import { Download } from "lucide-react";
 import PageHeader from "../../components/admin/PageHeader";
 import TelechargementFiliereCard from "../../components/admin/TelechargementFiliereCard";
 import { useFetch } from "../../hooks/useFetch";
-import { telechargementCatalogue, telechargementsParFiliere } from "../../data/dashboard";
 import "./TelechargementsAdmin.css";
 
 function TelechargementsAdmin() {
-  // GET /api/admin/stats/telechargements — mock tant que le backend ne l'expose pas
-  // (voir documentation/Logique_Api.md).
-  const { data } = useFetch("/admin/stats/telechargements", {
-    fallback: { catalogue: telechargementCatalogue, par_filiere: telechargementsParFiliere },
-  });
+  const { data: formationsData } = useFetch("/admin/formations");
+  const formations = Array.isArray(formationsData) ? formationsData : formationsData?.data ?? [];
 
-  const catalogueValue = data?.catalogue ?? 0;
-  const parFiliere = [...(data?.par_filiere ?? [])].sort(
-    (a, b) => b.telechargements - a.telechargements
-  );
+  const { data: catalogueData } = useFetch("/admin/catalogue/downloads-count");
+  const catalogueValue = catalogueData?.downloads_count ?? 0;
+
+  const parFiliere = formations
+    .map((f) => ({ slug: f.slug, filiere: f.nom, telechargements: f.downloads_count ?? 0 }))
+    .sort((a, b) => b.telechargements - a.telechargements);
 
   return (
     <div className="admin-telechargements">
