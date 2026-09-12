@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { LayoutDashboard, BookOpen, Download, Users, Star, Mail, Settings, LogOut, X } from "lucide-react";
 import { logout } from "../../lib/auth";
+import { clearFetchCache } from "../../hooks/useFetch";
 import "./Sidebar.css";
 
 const LINKS = [
@@ -18,6 +19,7 @@ function Sidebar({ isOpen, onClose }) {
 
   async function handleLogout() {
     await logout();
+    clearFetchCache();
     navigate("/connexion");
   }
 

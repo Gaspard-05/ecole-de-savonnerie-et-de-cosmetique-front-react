@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import api, { API_BASE_URL } from "../lib/api";
 
-// Hook générique pour appeler l'API Laravel.
-// Tant que le fallback est fourni, il est retourné immédiatement (données mockées)
-// et l'appel réseau réel prend le relais dès que l'API est disponible.
+const cache = new Map();
 
 export function useFetch(endpoint, { fallback = null, enabled = true } = {}) {
-  const [data, setData] = useState(fallback);
-  const [loading, setLoading] = useState(enabled && !!API_BASE_URL);
+  const cached = cache.get(endpoint);
+  const [data, setData] = useState(cached ?? fallback);
+  const [loading, setLoading] = useState(enabled && !!API_BASE_URL && !cached);
   const [error, setError] = useState(null);
 
   useEffect(() => {
@@ -18,8 +17,9 @@ export function useFetch(endpoint, { fallback = null, enabled = true } = {}) {
 
     async function fetchData() {
       try {
-        setLoading(true);
+        if (!cache.has(endpoint)) setLoading(true);
         const res = await api.get(endpoint, { signal: controller.signal });
+        cache.set(endpoint, res.data);
         setData(res.data);
       } catch (err) {
         if (!axios.isCancel(err) && err.code !== "ERR_CANCELED") setError(err);
@@ -33,6 +33,10 @@ export function useFetch(endpoint, { fallback = null, enabled = true } = {}) {
   }, [endpoint, enabled]);
 
   return { data, loading, error };
+}
+
+export function clearFetchCache() {
+  cache.clear();
 }
 
 export async function postJSON(endpoint, payload) {
