@@ -11,6 +11,7 @@ import Temoignages from "../pages/Temoignages";
 import Contact from "../pages/Contact";
 import Preinscription from "../pages/Preinscription";
 import Connexion from "../pages/Connexion";
+import VerificationOtp from "../pages/VerificationOtp";
 import MentionsLegales from "../pages/MentionsLegales";
 import NotFound from "../pages/NotFound";
 
@@ -39,6 +40,7 @@ function AppRouter() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/preinscription" element={<Preinscription />} />
           <Route path="/connexion" element={<Connexion />} />
+          <Route path="/verification-otp" element={<VerificationOtp />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />
           <Route path="*" element={<NotFound />} />
         </Route>

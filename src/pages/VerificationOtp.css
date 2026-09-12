@@ -1,0 +1,99 @@
+.otp {
+  min-height: calc(100svh - 76px);
+  display: flex;
+  align-items: center;
+  background: var(--color-bg-alt);
+}
+
+.otp__inner {
+  display: flex;
+  justify-content: center;
+}
+
+.otp__card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.otp__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  margin-bottom: 16px;
+}
+
+.otp__card h1 {
+  font-size: 1.6rem;
+  margin-bottom: 8px;
+}
+
+.otp__card > p {
+  margin-bottom: 28px;
+}
+
+.otp__digits {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.otp__digit {
+  width: 48px;
+  height: 56px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: var(--font-weight-semibold);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+}
+
+.otp__digit:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  background: var(--color-white);
+}
+
+.otp__resend {
+  display: inline-block;
+  margin-top: 20px;
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.otp__resend:hover {
+  color: var(--color-secondary);
+}
+
+@media (max-width: 480px) {
+  .otp__card {
+    padding: 32px 20px;
+  }
+
+  .otp__digits {
+    gap: 6px;
+  }
+
+  .otp__digit {
+    width: 40px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
