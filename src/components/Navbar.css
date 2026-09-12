@@ -103,8 +103,9 @@
   .navbar__nav {
     position: fixed;
     top: 76px;
-    left: 0;
+    left: auto;
     right: 0;
+    width: 70%;
     bottom: 0;
     background: var(--color-primary);
     box-shadow: var(--shadow-lg);
@@ -165,7 +166,6 @@
 /* Tablette : le menu offcanvas n'occupe que 40% de la largeur, ancré à droite */
 @media (min-width: 641px) and (max-width: 900px) {
   .navbar__nav {
-    left: auto;
     width: 40%;
   }
 }
