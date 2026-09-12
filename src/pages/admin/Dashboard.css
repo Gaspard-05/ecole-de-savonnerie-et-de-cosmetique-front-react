@@ -12,7 +12,7 @@
   align-items: start;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .admin-dashboard__kpis {
     grid-template-columns: repeat(2, 1fr);
   }
