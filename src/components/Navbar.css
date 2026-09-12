@@ -155,6 +155,14 @@
   }
 }
 
+/* Tablette : le menu offcanvas n'occupe que 70% de la largeur, ancré à droite */
+@media (min-width: 641px) and (max-width: 900px) {
+  .navbar__nav {
+    left: auto;
+    width: 70%;
+  }
+}
+
 @media (min-width: 901px) {
   .navbar__nav {
     display: flex;
