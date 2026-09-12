@@ -1,19 +1,62 @@
-# React + Vite
+# ESC — École de Savonnerie et de Cosmétique
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Site public et tableau de bord administrateur de l'ESC, développés en React et connectés à une API Laravel.
 
-Currently, two official plugins are available:
+## Aperçu
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Site public** : présentation de l'école, catalogue de formations, témoignages, formulaire de contact et de pré-inscription.
+- **Espace admin** (`/admin`) : tableau de bord, gestion des formations (CRUD), suivi des pré-inscriptions et des messages de contact, statistiques de téléchargement des PDF, authentification par token Bearer.
 
-## React Compiler
+## Stack technique
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- [React 19](https://react.dev) + [React Router 7](https://reactrouter.com)
+- [Vite 8](https://vitejs.dev) (avec React Compiler)
+- [axios](https://axios-http.com) pour les appels à l'API Laravel
+- [Recharts](https://recharts.org) pour les graphiques du dashboard
+- [SweetAlert2](https://sweetalert2.github.io) pour les notifications
+- [lucide-react](https://lucide.dev) pour les icônes
 
-Note: This will impact Vite dev & build performances.
-You can also try [the experimental native React Compiler support in plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md#rust-react-compiler) by using `compiler: true` in the plugin options instead of using the Babel plugin.
+## Prérequis
 
-## Expanding the ESLint configuration
+- Node.js 18+
+- Un backend Laravel démarré et accessible (l'API n'est pas incluse dans ce dépôt)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Installation
+
+```bash
+npm install
+```
+
+Créer un fichier `.env` à la racine avec l'URL de l'API Laravel :
+
+```
+VITE_API_BASE_URL=http://localhost:8000/api
+```
+
+Sans cette variable, les pages publiques restent fonctionnelles en mode démo (données mockées dans `src/data/`), mais l'espace admin nécessite une API réelle.
+
+## Scripts disponibles
+
+```bash
+npm run dev       # serveur de développement
+npm run build     # build de production
+npm run lint      # vérifie le code avec ESLint
+npm run preview   # prévisualise le build de production
+```
+
+## Structure du projet
+
+```
+src/
+  components/       # composants réutilisables (public + admin/)
+  pages/            # pages publiques + pages/admin/
+  layouts/          # PublicLayout, AdminLayout
+  router/           # configuration des routes (AppRouter.jsx)
+  hooks/            # useFetch (lecture API + cache), postJSON
+  lib/              # api.js (instance axios + intercepteurs), auth.js (token, login/logout)
+  data/             # données mockées (fallback en l'absence d'API)
+```
+
+## Authentification admin
+
+L'accès à `/admin/*` nécessite une connexion (`/connexion`). Le token reçu de l'API est stocké en `localStorage` et ajouté automatiquement à chaque requête admin ; une réponse `401` déconnecte l'utilisateur et le redirige vers la page de connexion.
