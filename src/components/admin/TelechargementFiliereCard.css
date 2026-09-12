@@ -5,7 +5,7 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  padding: 20px;
+  padding: 10px 16px;
   color: inherit;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -36,11 +36,11 @@
   padding-right: 34px;
   color: var(--color-text);
   font-weight: var(--font-weight-medium);
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .telechargement-filiere-card__value {
-  font-size: 30px;
+  font-size: 22px;
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
   margin: 0;

@@ -6,13 +6,13 @@
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  padding: 24px 26px;
+  padding: 14px 20px;
   margin: 24px 0 32px;
 }
 
 .admin-telechargements__catalogue-badge {
-  width: 56px;
-  height: 56px;
+  width: 44px;
+  height: 44px;
   flex-shrink: 0;
   border-radius: var(--radius-md);
   background: var(--color-secondary-light);
@@ -23,10 +23,10 @@
 }
 
 .admin-telechargements__catalogue-value {
-  font-size: 32px;
+  font-size: 26px;
   font-weight: var(--font-weight-bold);
   color: var(--color-text);
-  margin: 0 0 4px;
+  margin: 0 0 2px;
 }
 
 .admin-telechargements__catalogue-label {
@@ -41,7 +41,7 @@
 
 .admin-telechargements__grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
