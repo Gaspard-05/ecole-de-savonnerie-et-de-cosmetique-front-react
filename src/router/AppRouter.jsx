@@ -8,6 +8,7 @@ import Ecole from "../pages/Ecole";
 import Formations from "../pages/Formations";
 import FormationDetail from "../pages/FormationDetail";
 import Temoignages from "../pages/Temoignages";
+import DeposerTemoignage from "../pages/DeposerTemoignage";
 import Contact from "../pages/Contact";
 import Preinscription from "../pages/Preinscription";
 import Connexion from "../pages/Connexion";
@@ -38,6 +39,7 @@ function AppRouter() {
           <Route path="/formations" element={<Formations />} />
           <Route path="/formations/:slug" element={<FormationDetail />} />
           <Route path="/temoignages" element={<Temoignages />} />
+          <Route path="/temoignages/deposer" element={<DeposerTemoignage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/preinscription" element={<Preinscription />} />
           <Route path="/connexion" element={<Connexion />} />

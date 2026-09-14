@@ -1,0 +1,56 @@
+.deposer-temoignage {
+  background: var(--color-bg-alt);
+  min-height: calc(100svh - 76px);
+  display: flex;
+  align-items: center;
+}
+
+.deposer-temoignage__inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 52px;
+  align-items: center;
+}
+
+.deposer-temoignage__intro h6 {
+  margin-bottom: 10px;
+}
+
+.deposer-temoignage__intro p {
+  font-size: 17px;
+}
+
+.deposer-temoignage__card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 36px;
+  box-shadow: var(--shadow-md);
+}
+
+.deposer-temoignage__stars {
+  display: flex;
+  gap: 6px;
+}
+
+.deposer-temoignage__star {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--color-border);
+  cursor: pointer;
+}
+
+.deposer-temoignage__star--active {
+  color: var(--color-secondary);
+}
+
+@media (max-width: 900px) {
+  .deposer-temoignage__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .deposer-temoignage__card {
+    padding: 26px;
+  }
+}

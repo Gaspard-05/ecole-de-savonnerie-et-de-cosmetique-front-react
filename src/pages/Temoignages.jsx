@@ -1,5 +1,6 @@
 import TestimonialCard from "../components/TestimonialCard";
 import SectionCTA from "../components/SectionCTA";
+import Button from "../components/Button";
 import { temoignages } from "../data/temoignages";
 import "./Temoignages.css";
 
@@ -18,10 +19,19 @@ function Temoignages() {
       </section>
 
       <section className="temoignages-list">
-        <div className="container temoignages-list__grid">
-          {temoignages.map((temoignage) => (
-            <TestimonialCard key={temoignage.id} temoignage={temoignage} />
-          ))}
+        <div className="container">
+          <div className="temoignages-list__header">
+            <h2>Les témoignages</h2>
+            <Button to="/temoignages/deposer" variant="primary">
+              Faire un témoignage
+            </Button>
+          </div>
+
+          <div className="temoignages-list__grid">
+            {temoignages.map((temoignage) => (
+              <TestimonialCard key={temoignage.id} temoignage={temoignage} />
+            ))}
+          </div>
         </div>
       </section>
 
