@@ -1,3 +1,7 @@
+.admin-dashboard h1 {
+  font-size: 1.7rem;
+}
+
 .admin-dashboard__kpis {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
