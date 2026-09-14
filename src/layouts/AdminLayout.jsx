@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import { Menu } from "lucide-react";
 import Sidebar from "../components/admin/Sidebar";
+import Topbar from "../components/admin/Topbar";
 import { isAuthenticated } from "../lib/auth";
 import "./AdminLayout.css";
 
@@ -26,14 +26,7 @@ function AdminLayout() {
       )}
 
       <div className="admin-content">
-        <button
-          type="button"
-          className="admin-layout__burger"
-          onClick={() => setSidebarOpen(true)}
-          aria-label="Ouvrir le menu"
-        >
-          <Menu size={22} />
-        </button>
+        <Topbar onOpenSidebar={() => setSidebarOpen(true)} />
 
         <main className="admin-layout__main">
           <Outlet />
