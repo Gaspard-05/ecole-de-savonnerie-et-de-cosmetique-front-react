@@ -1,14 +1,34 @@
 import { useRef, useState } from "react";
+import { useLocation, useNavigate, Navigate } from "react-router-dom";
 import { MailCheck } from "lucide-react";
 import Button from "../components/Button";
+import { verifyOtpCode } from "../lib/auth";
 import "./VerificationOtp.css";
 import "../components/Form.css";
 
 const CODE_LENGTH = 6;
 
+function getApiErrorMessage(err, fallback) {
+  const data = err.response?.data;
+  if (data?.errors) {
+    return Object.values(data.errors).flat().join(" ");
+  }
+  return data?.message || fallback;
+}
+
 function VerificationOtp() {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const email = location.state?.email;
+
   const [code, setCode] = useState(Array(CODE_LENGTH).fill(""));
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const inputsRef = useRef([]);
+
+  if (!email) {
+    return <Navigate to="/connexion" replace />;
+  }
 
   function handleChange(index, e) {
     const value = e.target.value.replace(/\D/g, "").slice(-1);
@@ -28,8 +48,18 @@ function VerificationOtp() {
     }
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    setError("");
+    setSubmitting(true);
+    try {
+      await verifyOtpCode(email, code.join(""));
+      navigate("/admin/dashboard");
+    } catch (err) {
+      setError(getApiErrorMessage(err, "Code invalide ou expiré."));
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   const isComplete = code.every((digit) => digit !== "");
@@ -43,7 +73,7 @@ function VerificationOtp() {
           </div>
           <h1>Vérification en deux étapes</h1>
           <p>
-            Saisissez le code à {CODE_LENGTH} chiffres envoyé à votre adresse email pour
+            Saisissez le code à {CODE_LENGTH} chiffres envoyé par email à <strong>{email}</strong> pour
             confirmer votre connexion.
           </p>
 
@@ -65,8 +95,16 @@ function VerificationOtp() {
               ))}
             </div>
 
-            <Button type="submit" variant="primary" size="lg" className="form__submit" disabled={!isComplete}>
-              Vérifier
+            {error && <span className="form__error">{error}</span>}
+
+            <Button
+              type="submit"
+              variant="primary"
+              size="lg"
+              className="form__submit"
+              disabled={!isComplete || submitting}
+            >
+              {submitting ? "Vérification..." : "Vérifier"}
             </Button>
           </form>
 

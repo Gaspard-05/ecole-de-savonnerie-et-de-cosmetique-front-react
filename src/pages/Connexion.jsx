@@ -34,8 +34,8 @@ function Connexion() {
     setError("");
     setSubmitting(true);
     try {
-      await login(values.email, values.motDePasse);
-      navigate("/admin/dashboard");
+      const data = await login(values.email, values.motDePasse);
+      navigate("/verification-otp", { state: { email: data.email } });
     } catch (err) {
       setError(getApiErrorMessage(err, "Email ou mot de passe incorrect."));
     } finally {
