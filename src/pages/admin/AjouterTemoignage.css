@@ -1,0 +1,26 @@
+.admin-ajouter-temoignage__form {
+  max-width: 640px;
+}
+
+.admin-ajouter-temoignage__stars {
+  display: flex;
+  gap: 6px;
+}
+
+.admin-ajouter-temoignage__star {
+  background: none;
+  border: none;
+  padding: 4px;
+  color: var(--color-border);
+  cursor: pointer;
+}
+
+.admin-ajouter-temoignage__star--active {
+  color: var(--color-secondary);
+}
+
+.admin-ajouter-temoignage__actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}

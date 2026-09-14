@@ -23,6 +23,7 @@ import ModifierFormation from "../pages/admin/ModifierFormation";
 import Prospects from "../pages/admin/Prospects";
 import TelechargementsAdmin from "../pages/admin/TelechargementsAdmin";
 import TemoignagesAdmin from "../pages/admin/TemoignagesAdmin";
+import AjouterTemoignage from "../pages/admin/AjouterTemoignage";
 import Messages from "../pages/admin/Messages";
 import Parametres from "../pages/admin/Parametres";
 
@@ -55,6 +56,7 @@ function AppRouter() {
           <Route path="/admin/telechargements" element={<TelechargementsAdmin />} />
           <Route path="/admin/prospects" element={<Prospects />} />
           <Route path="/admin/temoignages" element={<TemoignagesAdmin />} />
+          <Route path="/admin/temoignages/ajouter" element={<AjouterTemoignage />} />
           <Route path="/admin/messages" element={<Messages />} />
           <Route path="/admin/parametres" element={<Parametres />} />
         </Route>
