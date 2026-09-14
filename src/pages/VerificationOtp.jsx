@@ -48,6 +48,20 @@ function VerificationOtp() {
     }
   }
 
+  function handlePaste(index, e) {
+    e.preventDefault();
+    const digits = e.clipboardData.getData("text").replace(/\D/g, "").slice(0, CODE_LENGTH - index).split("");
+    if (digits.length === 0) return;
+    setCode((prev) => {
+      const next = [...prev];
+      digits.forEach((digit, i) => {
+        next[index + i] = digit;
+      });
+      return next;
+    });
+    inputsRef.current[Math.min(index + digits.length, CODE_LENGTH - 1)]?.focus();
+  }
+
   async function handleSubmit(e) {
     e.preventDefault();
     setError("");
@@ -90,6 +104,7 @@ function VerificationOtp() {
                   value={digit}
                   onChange={(e) => handleChange(index, e)}
                   onKeyDown={(e) => handleKeyDown(index, e)}
+                  onPaste={(e) => handlePaste(index, e)}
                   aria-label={`Chiffre ${index + 1} du code`}
                 />
               ))}
