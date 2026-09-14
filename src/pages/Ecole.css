@@ -80,6 +80,19 @@
   box-shadow: var(--shadow-md);
 }
 
+.ecole-highlights__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.ecole-certification,
+.ecole-reseau {
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+}
+
 .ecole-certification {
   background: var(--color-primary);
 }
@@ -87,8 +100,15 @@
 .ecole-certification__inner,
 .ecole-reseau__inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 28px;
+  text-align: center;
+  gap: 16px;
+}
+
+.ecole-certification__inner h2,
+.ecole-reseau__inner h2 {
+  font-size: 1.4rem;
 }
 
 .ecole-certification__inner h2,
@@ -136,6 +156,10 @@
   }
 
   .ecole-approche__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ecole-highlights__grid {
     grid-template-columns: 1fr;
   }
 

@@ -153,7 +153,7 @@ function Accueil() {
             ))}
           </div>
           <div className="formations-preview__more">
-            <Link to="/temoignages" className="btn btn--ghost">
+            <Link to="/temoignages" className="btn btn--outline btn--lg">
               Voir tous les témoignages →
             </Link>
           </div>

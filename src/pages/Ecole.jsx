@@ -111,30 +111,34 @@ function Ecole() {
         </div>
       </section>
 
-      <section className="ecole-certification">
-        <div className="container ecole-certification__inner">
-          <Award size={40} className="ecole-certification__icon" aria-hidden="true" />
-          <div>
-            <h2>Une double certification reconnue</h2>
-            <p>
-              À l'issue de votre formation, vous obtenez la certification ESC ainsi que le CQM
-              (Certificat de Qualification aux Métiers), un gage de sérieux et de crédibilité auprès de
-              vos futures clientes et partenaires.
-            </p>
+      <section className="ecole-highlights">
+        <div className="container ecole-highlights__grid">
+          <div className="ecole-certification">
+            <div className="ecole-certification__inner">
+              <Award size={40} className="ecole-certification__icon" aria-hidden="true" />
+              <div>
+                <h2>Une double certification reconnue</h2>
+                <p>
+                  À l'issue de votre formation, vous obtenez la certification ESC ainsi que le CQM
+                  (Certificat de Qualification aux Métiers), un gage de sérieux et de crédibilité auprès
+                  de vos futures clientes et partenaires.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
 
-      <section className="ecole-reseau">
-        <div className="container ecole-reseau__inner">
-          <Handshake size={40} className="ecole-reseau__icon" aria-hidden="true" />
-          <div>
-            <h2>Un réseau de partenaires pour démarrer sereinement</h2>
-            <p>
-              Fournisseurs de matières premières, boutiques partenaires, marchés artisanaux : l'ESC vous
-              connecte à son réseau pour faciliter le lancement et le développement de votre activité,
-              bien après la fin de la formation.
-            </p>
+          <div className="ecole-reseau">
+            <div className="ecole-reseau__inner">
+              <Handshake size={40} className="ecole-reseau__icon" aria-hidden="true" />
+              <div>
+                <h2>Un réseau de partenaires pour démarrer sereinement</h2>
+                <p>
+                  Fournisseurs de matières premières, boutiques partenaires, marchés artisanaux : l'ESC
+                  vous connecte à son réseau pour faciliter le lancement et le développement de votre
+                  activité, bien après la fin de la formation.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

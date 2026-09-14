@@ -77,7 +77,6 @@ function Formations() {
         description="Notre équipe vous conseille gratuitement sur la spécialité la plus adaptée à votre projet."
         buttonLabel="Nous contacter"
         buttonTo="/contact"
-        variant="light"
       />
     </>
   );
