@@ -44,7 +44,7 @@ function FormationDetail() {
         icon: "error",
         title: "Téléchargement impossible",
         text: "Le PDF de cette formation n'a pas pu être généré, merci de réessayer.",
-        confirmButtonColor: "#905a01",
+        confirmButtonColor: "#02462e",
       });
     } finally {
       setDownloadingPdf(false);
@@ -66,7 +66,7 @@ function FormationDetail() {
   const temoignage = getTemoignageByFormationSlug(slug);
 
   return (
-    <>
+    <div className="formation-detail">
       <section className="formation-detail-hero">
         <div className="container formation-detail-hero__inner">
           <div className="formation-detail-hero__media">
@@ -197,7 +197,7 @@ function FormationDetail() {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }
 

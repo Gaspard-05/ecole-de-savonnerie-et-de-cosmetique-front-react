@@ -29,7 +29,7 @@ function Formations() {
         icon: "error",
         title: "Téléchargement impossible",
         text: "Le catalogue n'a pas pu être généré, merci de réessayer.",
-        confirmButtonColor: "#905a01",
+        confirmButtonColor: "#02462e",
       });
     } finally {
       setDownloadingCatalogue(false);
@@ -37,7 +37,7 @@ function Formations() {
   }
 
   return (
-    <>
+    <div className="formations">
       <section className="page-hero">
         <div className="container">
           <h6>Nos formations</h6>
@@ -78,7 +78,7 @@ function Formations() {
         buttonLabel="Nous contacter"
         buttonTo="/contact"
       />
-    </>
+    </div>
   );
 }
 

@@ -31,7 +31,7 @@ const avantages = [
 
 function Ecole() {
   return (
-    <>
+    <div className="ecole">
       <section className="page-hero">
         <div className="container">
           <h6>L'ESC</h6>
@@ -149,7 +149,7 @@ function Ecole() {
         buttonLabel="Découvrir nos formations"
         buttonTo="/formations"
       />
-    </>
+    </div>
   );
 }
 

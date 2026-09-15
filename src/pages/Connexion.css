@@ -4,6 +4,7 @@
   --color-primary-dark: #012e1e;
   --color-primary-light: #e3ece8;
   --color-secondary: #fbba16;
+  --color-text-muted: #000000;
 
   min-height: calc(100svh - 76px);
   display: flex;

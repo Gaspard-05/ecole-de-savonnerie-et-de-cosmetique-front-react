@@ -75,7 +75,7 @@ function Accueil() {
   const temoignagesAffiches = temoignages.slice(0, 3);
 
   return (
-    <>
+    <div className="accueil">
       <section className="hero">
         <div className="container hero__inner">
           <div className="hero__text">
@@ -210,7 +210,7 @@ function Accueil() {
         buttonLabel="Se pré-inscrire"
         buttonTo="/preinscription"
       />
-    </>
+    </div>
   );
 }
 

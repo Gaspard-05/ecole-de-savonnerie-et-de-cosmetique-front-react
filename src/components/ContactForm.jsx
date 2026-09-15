@@ -61,7 +61,7 @@ function ContactForm() {
         icon: "success",
         title: "Message envoyé",
         text: "Votre message a été enregistré. L'école vous contactera pour plus d'éclaircissements.",
-        confirmButtonColor: "#905a01",
+        confirmButtonColor: "#02462e",
       });
       setValues(initialState);
       setErrors({});

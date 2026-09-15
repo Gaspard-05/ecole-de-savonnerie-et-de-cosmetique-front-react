@@ -1,3 +1,12 @@
+.contact {
+  /* Essai de charte alternative, limité à cette page pour prévisualisation */
+  --color-primary: #02462e;
+  --color-primary-dark: #012e1e;
+  --color-primary-light: #e3ece8;
+  --color-secondary: #fbba16;
+  --color-text-muted: #000000;
+}
+
 .contact-content__grid {
   display: grid;
   grid-template-columns: 0.85fr 1.15fr;

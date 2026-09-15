@@ -1,7 +1,16 @@
+.accueil {
+  /* Essai de charte alternative, limité à la page d'accueil pour prévisualisation */
+  --color-primary: #02462e;
+  --color-primary-dark: #012e1e;
+  --color-primary-light: #e3ece8;
+  --color-secondary: #fbba16;
+  --color-text-muted: #000000;
+}
+
 /* Hero */
 .hero {
   padding: 56px 0 72px;
-  background: radial-gradient(circle at top right, var(--color-secondary-light), var(--color-bg) 60%);
+  background: var(--color-bg-alt);
 }
 
 .hero__inner {
@@ -114,7 +123,7 @@
 
 /* Chiffres clés */
 .chiffres {
-  background: linear-gradient(120deg, var(--color-accent), var(--color-accent-dark));
+  background: var(--color-primary);
 }
 
 .chiffres__grid {

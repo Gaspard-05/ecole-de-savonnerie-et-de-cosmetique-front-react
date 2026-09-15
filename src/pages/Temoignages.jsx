@@ -6,7 +6,7 @@ import "./Temoignages.css";
 
 function Temoignages() {
   return (
-    <>
+    <div className="temoignages">
       <section className="page-hero">
         <div className="container">
           <h6>Témoignages</h6>
@@ -41,7 +41,7 @@ function Temoignages() {
         buttonLabel="Rejoindre l'ESC"
         buttonTo="/preinscription"
       />
-    </>
+    </div>
   );
 }
 

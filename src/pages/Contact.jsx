@@ -13,7 +13,7 @@ const coordonnees = [
 
 function Contact() {
   return (
-    <>
+    <div className="contact">
       <section className="page-hero">
         <div className="container">
           <h6>Contact</h6>
@@ -71,7 +71,7 @@ function Contact() {
         buttonLabel="Se pré-inscrire"
         buttonTo="/preinscription"
       />
-    </>
+    </div>
   );
 }
 
