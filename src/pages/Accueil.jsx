@@ -77,28 +77,30 @@ function Accueil() {
   return (
     <div className="accueil">
       <section className="hero">
-        <div className="container hero__inner">
-          <div className="hero__text">
-            <h6>École de Savonnerie et de Cosmétique</h6>
-            <h1>Transformez votre passion en activité professionnelle</h1>
-            <p>
-              Formations pratiques en savonnerie, cosmétique, capillaire et artisanat : apprenez un
-              savoir-faire recherché et lancez votre propre activité en quelques semaines.
-            </p>
-            <div className="hero__actions">
-              <Button to="/preinscription" variant="primary" size="lg">
-                Se pré-inscrire
-              </Button>
-              <Button to="/formations" variant="outline" size="lg">
-                Voir les formations
-              </Button>
-            </div>
-          </div>
-          <div className="hero__media">
+        <div className="container">
+          <div className="hero__card">
             <img
-              src="https://images.unsplash.com/photo-1556760544-74068565f05c?w=900&q=80"
+              className="hero__image"
+              src="https://images.unsplash.com/photo-1556760544-74068565f05c?w=1600&q=80"
               alt="Apprentie en pleine fabrication artisanale lors d'un atelier ESC"
             />
+            <div className="hero__overlay" />
+            <div className="hero__text">
+              <h6>École de Savonnerie et de Cosmétique</h6>
+              <h1>Transformez votre passion en activité professionnelle</h1>
+              <p>
+                Formations pratiques en savonnerie, cosmétique, capillaire et artisanat : apprenez un
+                savoir-faire recherché et lancez votre propre activité en quelques semaines.
+              </p>
+              <div className="hero__actions">
+                <Button to="/preinscription" variant="primary" size="lg">
+                  Se pré-inscrire
+                </Button>
+                <Button to="/formations" variant="outline" size="lg">
+                  Voir les formations
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

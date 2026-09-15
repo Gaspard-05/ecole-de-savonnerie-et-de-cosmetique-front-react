@@ -16,20 +16,58 @@
   background: var(--white-1);
 }
 
-.hero__inner {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 48px;
+.hero__card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  min-height: 520px;
+  display: flex;
   align-items: center;
 }
 
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(1, 46, 30, 0.92) 0%,
+    rgba(1, 46, 30, 0.72) 35%,
+    rgba(1, 46, 30, 0.15) 68%,
+    rgba(1, 46, 30, 0) 85%
+  );
+}
+
+.hero__text {
+  position: relative;
+  z-index: 1;
+  max-width: 560px;
+  padding: 48px;
+  color: var(--color-white);
+}
+
+.hero__text h6 {
+  color: var(--color-secondary);
+}
+
 .hero__text h1 {
+  color: var(--color-white);
   margin: 8px 0 18px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
 }
 
 .hero__text p {
+  color: var(--color-white);
+  opacity: 0.92;
   font-size: 18px;
-  max-width: 520px;
   margin-bottom: 30px;
 }
 
@@ -39,12 +77,14 @@
   flex-wrap: wrap;
 }
 
-.hero__media img {
-  width: 100%;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  aspect-ratio: 4 / 3.4;
-  object-fit: cover;
+.hero__text .btn--outline {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.hero__text .btn--outline:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
 }
 
 /* Présentation rapide */
@@ -164,12 +204,13 @@
 }
 
 @media (max-width: 1024px) {
-  .hero__inner {
-    grid-template-columns: 1fr;
+  .hero__card {
+    min-height: 440px;
   }
 
-  .hero__media {
-    order: -1;
+  .hero__text {
+    max-width: 480px;
+    padding: 36px;
   }
 
   .presentation__inner {
@@ -205,6 +246,24 @@
   .chiffres__grid {
     grid-template-columns: 1fr;
     gap: 32px;
+  }
+
+  .hero__card {
+    min-height: 380px;
+  }
+
+  .hero__text {
+    max-width: 100%;
+    padding: 24px;
+  }
+
+  .hero__overlay {
+    background: linear-gradient(
+      180deg,
+      rgba(1, 46, 30, 0.35) 0%,
+      rgba(1, 46, 30, 0.88) 55%,
+      rgba(1, 46, 30, 0.94) 100%
+    );
   }
 
   .hero__text p {
