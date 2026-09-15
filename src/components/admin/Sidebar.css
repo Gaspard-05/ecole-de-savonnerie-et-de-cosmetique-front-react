@@ -55,7 +55,7 @@
 }
 
 .admin-sidebar__link:hover {
-  background: var(--color-bg-alt);
+  background: var(--white-2);
   color: var(--color-primary);
 }
 

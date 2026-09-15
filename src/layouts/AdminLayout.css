@@ -1,7 +1,17 @@
 .admin-layout {
+  /* Essai de charte alternative, limité à la partie admin (sidebar/topbar) pour prévisualisation */
+  --color-primary: #02462e;
+  --color-primary-dark: #012e1e;
+  --color-primary-light: #e3ece8;
+  --color-secondary: #fbba16;
+  --color-text-muted: #000000;
+
+  --white-1: #ffffff;
+  --white-2: #f5f8f7;
+
   display: flex;
   min-height: 100svh;
-  background: var(--color-bg-alt);
+  background: var(--white-2);
 }
 
 .admin-content {
