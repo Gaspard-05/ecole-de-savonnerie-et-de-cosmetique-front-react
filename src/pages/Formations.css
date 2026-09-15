@@ -5,6 +5,17 @@
   --color-primary-light: #e3ece8;
   --color-secondary: #fbba16;
   --color-text-muted: #000000;
+
+  --white-1: #ffffff;
+  --white-2: #f5f8f7;
+}
+
+.formations .page-hero {
+  background: var(--white-1);
+}
+
+.formations-grid {
+  background: var(--white-2);
 }
 
 .formations-grid__toolbar {
