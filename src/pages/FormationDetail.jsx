@@ -68,29 +68,30 @@ function FormationDetail() {
   return (
     <div className="formation-detail">
       <section className="formation-detail-hero">
-        <div className="container formation-detail-hero__inner">
-          <div className="formation-detail-hero__media">
-            <img src={formation.image} alt={formation.nom} />
-          </div>
-          <div className="formation-detail-hero__text">
-            <h6>Formation</h6>
-            <h1>{formation.nom}</h1>
-            <p className="formation-detail-hero__price">{formatPrix(formation.prix)}</p>
-            <p>{formation.description}</p>
-            <div className="formation-detail-hero__actions">
-              <Button to={`/preinscription?formation=${formation.slug}`} variant="primary" size="md">
-                Je veux me pré-inscrire
-              </Button>
-              <Button
-                type="button"
-                variant="outline"
-                size="md"
-                onClick={handleDownloadPdf}
-                disabled={downloadingPdf}
-              >
-                <Download size={18} />
-                {downloadingPdf ? "Génération..." : "Télécharger la formation"}
-              </Button>
+        <div className="container">
+          <div className="formation-detail-hero__card">
+            <img className="formation-detail-hero__image" src={formation.image} alt={formation.nom} />
+            <div className="formation-detail-hero__overlay" />
+            <div className="formation-detail-hero__text">
+              <h6>Formation</h6>
+              <h1>{formation.nom}</h1>
+              <p className="formation-detail-hero__price">{formatPrix(formation.prix)}</p>
+              <p>{formation.description}</p>
+              <div className="formation-detail-hero__actions">
+                <Button to={`/preinscription?formation=${formation.slug}`} variant="primary" size="md">
+                  Je veux me pré-inscrire
+                </Button>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="md"
+                  onClick={handleDownloadPdf}
+                  disabled={downloadingPdf}
+                >
+                  <Download size={18} />
+                  {downloadingPdf ? "Génération..." : "Télécharger la formation"}
+                </Button>
+              </div>
             </div>
           </div>
         </div>
