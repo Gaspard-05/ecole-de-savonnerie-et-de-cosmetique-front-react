@@ -69,7 +69,7 @@ function PreinscriptionForm({ preselectedSlug }) {
         icon: "success",
         title: "Pré-inscription enregistrée",
         text: "Votre pré-inscription a été enregistrée. L'école vous contactera pour les procédures à suivre.",
-        confirmButtonColor: "#905a01",
+        confirmButtonColor: "#02462e",
       });
       setValues(getInitialState(preselectedSlug));
       setErrors({});

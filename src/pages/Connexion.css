@@ -1,4 +1,10 @@
 .connexion {
+  /* Essai de charte alternative, limité à cette page pour prévisualisation */
+  --color-primary: #02462e;
+  --color-primary-dark: #012e1e;
+  --color-primary-light: #e3ece8;
+  --color-secondary: #fbba16;
+
   min-height: calc(100svh - 76px);
   display: flex;
   align-items: center;
@@ -28,8 +34,8 @@
   width: 56px;
   height: 56px;
   border-radius: 50%;
-  background: var(--color-primary-light);
-  color: var(--color-primary);
+  background: rgba(251, 186, 22, 0.16);
+  color: var(--color-secondary);
   margin-bottom: 16px;
 }
 

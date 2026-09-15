@@ -1,4 +1,9 @@
 .preinscription {
+  /* Essai de charte alternative, limité à cette page pour prévisualisation */
+  --color-primary: #02462e;
+  --color-primary-dark: #012e1e;
+  --color-secondary: #fbba16;
+
   background: var(--color-bg-alt);
   min-height: calc(100svh - 76px);
   display: flex;
@@ -13,6 +18,7 @@
 }
 
 .preinscription__intro h6 {
+  font-size: 1.1rem;
   margin-bottom: 10px;
 }
 

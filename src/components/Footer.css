@@ -1,4 +1,7 @@
 .footer {
+  /* Essai de charte alternative, limité au footer pour prévisualisation */
+  --color-primary: #02462e;
+
   background: var(--color-primary);
   color: var(--color-primary-light);
   margin-top: auto;
