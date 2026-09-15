@@ -1,6 +1,7 @@
 import { HandHeart, Target, Award, Handshake, LifeBuoy, Hammer } from "lucide-react";
 import SectionTitle from "../components/SectionTitle";
 import SectionCTA from "../components/SectionCTA";
+import { galerie } from "../data/galerie";
 import "./Ecole.css";
 
 const approche = [
@@ -107,6 +108,21 @@ function Ecole() {
               src="https://images.unsplash.com/photo-1556228720-195a672e8a03?w=800&q=80"
               alt="Crème cosmétique formulée lors d'un atelier ESC"
             />
+          </div>
+        </div>
+      </section>
+
+      <section className="ecole-galerie">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Vie à l'école"
+            title="Nos apprenantes en situation d'atelier"
+            description="Un aperçu des ateliers pratiques, au cœur de la pédagogie ESC."
+          />
+          <div className="ecole-galerie__grid">
+            {galerie.map((photo) => (
+              <img key={photo.id} src={photo.url} alt={photo.alt} loading="lazy" />
+            ))}
           </div>
         </div>
       </section>
