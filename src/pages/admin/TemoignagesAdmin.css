@@ -1,0 +1,78 @@
+.admin-temoignages__status {
+  color: var(--color-text-muted);
+  margin-top: 16px;
+}
+
+.admin-temoignages__table-wrap {
+  overflow-x: auto;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  margin-top: 20px;
+}
+
+.admin-temoignages__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.admin-temoignages__table th,
+.admin-temoignages__table td {
+  text-align: left;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--color-border);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.admin-temoignages__table th {
+  color: var(--color-text-muted);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+
+.admin-temoignages__table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-temoignages__table tbody tr:hover {
+  background: var(--color-bg-alt);
+}
+
+.admin-temoignages__message {
+  white-space: normal;
+  max-width: 320px;
+  color: var(--color-text-muted);
+}
+
+.admin-temoignages__note {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-medium);
+}
+
+.admin-temoignages__statut {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
+}
+
+.admin-temoignages__statut--publie {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.admin-temoignages__statut--non-publie {
+  background: var(--color-secondary-light);
+  color: var(--color-secondary);
+}
