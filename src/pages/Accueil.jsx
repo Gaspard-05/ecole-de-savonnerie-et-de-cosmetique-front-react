@@ -6,10 +6,43 @@ import SectionCTA from "../components/SectionCTA";
 import FormationCard from "../components/FormationCard";
 import TestimonialCard from "../components/TestimonialCard";
 import StatBlock from "../components/StatBlock";
+import Faq from "../components/Faq";
 import { useFetch } from "../hooks/useFetch";
 import { formations as formationsMock } from "../data/formations";
 import { temoignages } from "../data/temoignages";
 import "./Accueil.css";
+
+const faqItems = [
+  {
+    question: "Faut-il une expérience préalable pour s'inscrire ?",
+    reponse:
+      "Non, nos formations sont conçues pour accueillir des débutantes. Aucune expérience préalable en savonnerie ou en cosmétique n'est requise.",
+  },
+  {
+    question: "Quelle est la durée moyenne d'une formation ?",
+    reponse:
+      "La durée varie selon la spécialité choisie, de quelques jours à plusieurs semaines. Le détail est indiqué sur la fiche de chaque formation.",
+  },
+  {
+    question: "Les formations sont-elles certifiantes ?",
+    reponse:
+      "Oui, chaque formation débouche sur une double certification : le certificat ESC et le CQM (Certificat de Qualification aux Métiers).",
+  },
+  {
+    question: "Comment se déroule la pré-inscription ?",
+    reponse:
+      "Il suffit de remplir le formulaire de pré-inscription en ligne. Notre équipe vous recontacte ensuite pour finaliser votre inscription.",
+  },
+  {
+    question: "Un accompagnement est-il proposé après la formation ?",
+    reponse:
+      "Oui, nos diplômées bénéficient d'un suivi individuel et d'un accès à notre réseau de partenaires pour faciliter le lancement de leur activité.",
+  },
+  {
+    question: "Quels moyens de paiement sont acceptés ?",
+    reponse: "Plusieurs modalités de paiement sont proposées ; notre équipe vous en précise les détails lors de votre prise de contact.",
+  },
+];
 
 const atouts = [
   {
@@ -157,6 +190,17 @@ function Accueil() {
               Voir tous les témoignages →
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section className="faq">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Questions fréquentes"
+            title="Tout ce qu'il faut savoir avant de vous lancer"
+            description="Vous avez d'autres questions ? Contactez-nous, notre équipe vous répond avec plaisir."
+          />
+          <Faq items={faqItems} />
         </div>
       </section>
 
