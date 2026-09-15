@@ -5,6 +5,17 @@
   --color-primary-light: #e3ece8;
   --color-secondary: #fbba16;
   --color-text-muted: #000000;
+
+  --white-1: #ffffff;
+  --white-2: #f5f8f7;
+}
+
+.contact .page-hero {
+  background: var(--white-1);
+}
+
+.contact-content {
+  background: var(--white-2);
 }
 
 .contact-content__grid {
@@ -78,7 +89,7 @@
 }
 
 .contact-form-wrapper {
-  background: var(--color-bg-alt);
+  background: var(--color-primary-light);
   border-radius: var(--radius-lg);
   padding: 36px;
   border: 1px solid var(--color-border);
