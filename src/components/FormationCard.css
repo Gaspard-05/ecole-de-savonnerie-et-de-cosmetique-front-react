@@ -70,14 +70,21 @@
 .formation-card__link {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
+  gap: 8px;
+  align-self: flex-start;
   font-weight: var(--font-weight-semibold);
-  color: var(--color-secondary);
-  font-size: 15px;
-  transition: gap var(--transition-fast), color var(--transition-fast);
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 14px;
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-sm);
+  transition: gap var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
 }
 
 .formation-card__link:hover {
-  gap: 10px;
-  color: var(--color-primary);
+  gap: 12px;
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
 }
