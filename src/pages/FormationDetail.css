@@ -5,11 +5,18 @@
   --color-primary-light: #e3ece8;
   --color-secondary: #fbba16;
   --color-text-muted: #000000;
+
+  --white-1: #ffffff;
+  --white-2: #f5f8f7;
 }
 
 .formation-detail-hero {
   padding: 48px 0 64px;
-  background: var(--color-bg-alt);
+  background: var(--white-1);
+}
+
+.formation-detail-body {
+  background: var(--white-2);
 }
 
 .formation-detail-hero__inner {
@@ -32,6 +39,7 @@
 }
 
 .formation-detail-hero__text h1 {
+  font-size: clamp(1.5rem, 1.25rem + 1.2vw, 2.1rem);
   margin-bottom: 10px;
 }
 
@@ -40,7 +48,8 @@
   background: var(--color-secondary);
   color: var(--color-white);
   font-weight: var(--font-weight-semibold);
-  padding: 8px 18px;
+  font-size: 14px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   margin-bottom: 18px;
 }
@@ -66,6 +75,14 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px 48px;
+}
+
+.formation-detail-block {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 28px 26px;
+  box-shadow: var(--shadow-sm);
 }
 
 .formation-detail-block h2 {
@@ -128,7 +145,11 @@
 }
 
 .formation-detail-temoignage {
-  background: var(--color-bg-alt);
+  background: var(--white-1);
+}
+
+.formation-detail-temoignage .testimonial-card {
+  background: var(--color-primary-light);
 }
 
 .formation-detail-temoignage__card {
@@ -156,6 +177,10 @@
 .formation-detail-cta__inner p {
   opacity: 0.85;
   margin: 0;
+}
+
+.formation-detail-similaires {
+  background: var(--white-2);
 }
 
 .formation-detail-similaires__grid {

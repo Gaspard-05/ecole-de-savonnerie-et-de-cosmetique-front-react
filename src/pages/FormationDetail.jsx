@@ -78,13 +78,13 @@ function FormationDetail() {
             <p className="formation-detail-hero__price">{formatPrix(formation.prix)}</p>
             <p>{formation.description}</p>
             <div className="formation-detail-hero__actions">
-              <Button to={`/preinscription?formation=${formation.slug}`} variant="primary" size="lg">
+              <Button to={`/preinscription?formation=${formation.slug}`} variant="primary" size="md">
                 Je veux me pré-inscrire
               </Button>
               <Button
                 type="button"
                 variant="outline"
-                size="lg"
+                size="md"
                 onClick={handleDownloadPdf}
                 disabled={downloadingPdf}
               >
