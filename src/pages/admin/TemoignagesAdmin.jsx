@@ -1,4 +1,5 @@
-import { Plus, Star } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Eye, Plus, Star } from "lucide-react";
 import PageHeader from "../../components/admin/PageHeader";
 import { useFetch } from "../../hooks/useFetch";
 import "./TemoignagesAdmin.css";
@@ -39,9 +40,9 @@ function TemoignagesAdmin() {
                   <th>Email</th>
                   <th>Formation</th>
                   <th>Note</th>
-                  <th>Témoignage</th>
                   <th>Statut</th>
                   <th>Date</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -55,7 +56,6 @@ function TemoignagesAdmin() {
                         <Star size={14} fill="currentColor" /> {item.note ?? "—"}
                       </span>
                     </td>
-                    <td className="admin-temoignages__message">{item.contenu ?? "—"}</td>
                     <td>
                       <span
                         className={`admin-temoignages__statut admin-temoignages__statut--${
@@ -66,6 +66,15 @@ function TemoignagesAdmin() {
                       </span>
                     </td>
                     <td>{formatDate(item.date)}</td>
+                    <td>
+                      <Link
+                        to={`/admin/temoignages/${item.id}`}
+                        className="admin-temoignages__view"
+                        aria-label="Voir le témoignage"
+                      >
+                        <Eye size={18} />
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>

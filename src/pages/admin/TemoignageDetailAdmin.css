@@ -1,0 +1,114 @@
+.admin-temoignage-detail__status {
+  color: var(--color-text-muted);
+  margin-top: 16px;
+}
+
+.admin-temoignage-detail__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 32px;
+  margin-top: 20px;
+  max-width: 640px;
+}
+
+.admin-temoignage-detail__photo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+.admin-temoignage-detail__meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.admin-temoignage-detail__statut {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
+}
+
+.admin-temoignage-detail__statut--publie {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.admin-temoignage-detail__statut--non-publie {
+  background: var(--color-secondary-light);
+  color: var(--color-secondary);
+}
+
+.admin-temoignage-detail__note {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-medium);
+  font-size: 14px;
+}
+
+.admin-temoignage-detail__infos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 0 0 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-temoignage-detail__infos dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.admin-temoignage-detail__infos dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: var(--font-weight-medium);
+}
+
+.admin-temoignage-detail__contenu {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-text);
+  margin-bottom: 28px;
+}
+
+.admin-temoignage-detail__error {
+  color: var(--color-error);
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.admin-temoignage-detail__actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .admin-temoignage-detail__card {
+    padding: 24px 20px;
+  }
+
+  .admin-temoignage-detail__infos {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-temoignage-detail__actions .btn {
+    flex: 1;
+  }
+}
