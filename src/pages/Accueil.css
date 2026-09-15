@@ -154,6 +154,10 @@
   gap: 24px;
 }
 
+.temoignages-preview .testimonial-card {
+  background: var(--color-primary-light);
+}
+
 /* FAQ */
 .faq {
   background: var(--white-2);
