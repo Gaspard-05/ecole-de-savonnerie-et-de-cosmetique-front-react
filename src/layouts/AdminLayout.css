@@ -24,13 +24,13 @@
 }
 
 .admin-layout__main .btn--md {
-  padding: 10px 20px;
-  font-size: 14px;
+  padding: 8px 16px;
+  font-size: 13px;
 }
 
 .admin-layout__main .btn--sm {
-  padding: 7px 14px;
-  font-size: 13px;
+  padding: 5px 12px;
+  font-size: 12px;
 }
 
 .admin-layout__overlay {
