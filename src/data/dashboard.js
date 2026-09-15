@@ -25,22 +25,16 @@ export const inscriptionsParMois = [
   { mois: "Déc", inscriptions: 35 },
 ];
 
-// Palette dérivée de la charte graphique (nuances de #905A01, #D99201, #58761B),
-// validée pour la lisibilité (bande de luminosité + chroma) avec le script du skill dataviz.
-// Sur 9 parts issues de seulement 3 familles de teintes proches, la séparation CVD stricte
-// n'est pas atteignable (limite documentée du skill) : compensée par une légende + des
+// Palette dérivée de la charte graphique vert/or (nuances de #02462E et #FBBA16),
+// alternées pour distinguer les 9 parts. Sur seulement 2 familles de teintes,
+// la séparation CVD stricte n'est pas garantie : compensée par une légende + des
 // étiquettes directes toujours visibles, jamais la couleur seule pour identifier une part.
-const REPARTITION_COLORS = [
-  "#824f00",
-  "#a66601",
-  "#4a6416",
-  "#905a01",
-  "#d99201",
-  "#58761b",
-  "#b06e02",
-  "#e8a422",
-  "#6f9328",
-];
+const GREEN_SHADES = ["#012e1e", "#02462e", "#1f7a4d", "#4caf7a", "#a8d5bd"];
+const GOLD_SHADES = ["#8a5a00", "#c98a00", "#fbba16", "#ffe08a"];
+
+const REPARTITION_COLORS = Array.from({ length: 9 }, (_, index) =>
+  index % 2 === 0 ? GREEN_SHADES[Math.floor(index / 2)] : GOLD_SHADES[Math.floor(index / 2)]
+);
 
 const ETUDIANTS_PAR_FORMATION = {
   savonnerie: 28,

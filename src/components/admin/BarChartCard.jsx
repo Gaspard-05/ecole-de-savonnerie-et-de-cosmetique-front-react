@@ -9,7 +9,7 @@ import {
 } from "recharts";
 import "./BarChartCard.css";
 
-const BAR_COLOR = "#d99201"; // --color-secondary
+const BAR_COLOR = "#02462e"; // vert de la charte (--color-primary)
 
 function BarChartCard({ title, data }) {
   const maxValue = Math.max(...data.map((d) => d.inscriptions));
