@@ -28,9 +28,17 @@ export function clearToken() {
 
 export async function login(email, password) {
   const { data } = await api.post("/login", { email, password });
-  return data;
+  // 2FA désactivé temporairement : connexion directe avec le token renvoyé par /login.
+  setSession(data.token, data.user);
+  return data.user;
+
+  // -- Version 2FA (à réactiver plus tard) --
+  // const { data } = await api.post("/login", { email, password });
+  // return data;
 }
 
+// Gardée exportée (utilisée par VerificationOtp.jsx, page non supprimée mais plus
+// atteignable depuis Connexion.jsx tant que le 2FA est désactivé).
 export async function verifyOtpCode(email, code) {
   const { data } = await api.post("/login/verify-code", { email, code });
   setSession(data.token, data.user);

@@ -34,8 +34,11 @@ function Connexion() {
     setError("");
     setSubmitting(true);
     try {
-      const data = await login(values.email, values.motDePasse);
-      navigate("/verification-otp", { state: { email: data.email } });
+      await login(values.email, values.motDePasse);
+      navigate("/admin/dashboard");
+      // 2FA désactivé temporairement (à réactiver plus tard) :
+      // const data = await login(values.email, values.motDePasse);
+      // navigate("/verification-otp", { state: { email: data.email } });
     } catch (err) {
       setError(getApiErrorMessage(err, "Email ou mot de passe incorrect."));
     } finally {
