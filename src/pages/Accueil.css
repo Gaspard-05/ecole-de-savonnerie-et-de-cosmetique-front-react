@@ -5,12 +5,15 @@
   --color-primary-light: #e3ece8;
   --color-secondary: #fbba16;
   --color-text-muted: #000000;
+
+  --white-1: #ffffff;
+  --white-2: #f5f8f7;
 }
 
 /* Hero */
 .hero {
   padding: 56px 0 72px;
-  background: var(--color-bg-alt);
+  background: var(--white-1);
 }
 
 .hero__inner {
@@ -45,6 +48,10 @@
 }
 
 /* Présentation rapide */
+.presentation {
+  background: var(--white-2);
+}
+
 .presentation__inner {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -71,7 +78,7 @@
 
 /* Atouts */
 .atouts {
-  background: var(--color-bg-alt);
+  background: var(--white-1);
 }
 
 .atouts__grid {
@@ -109,6 +116,10 @@
 }
 
 /* Formations preview */
+.formations-preview {
+  background: var(--white-2);
+}
+
 .formations-preview__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -134,13 +145,18 @@
 
 /* Témoignages preview */
 .temoignages-preview {
-  background: var(--color-bg-alt);
+  background: var(--white-1);
 }
 
 .temoignages-preview__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+}
+
+/* FAQ */
+.faq {
+  background: var(--white-2);
 }
 
 @media (max-width: 1024px) {
