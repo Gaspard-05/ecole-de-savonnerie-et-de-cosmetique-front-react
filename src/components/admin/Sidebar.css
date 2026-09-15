@@ -69,17 +69,21 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 14px 4px;
+  padding: 11px 14px;
   margin-top: 14px;
   border: none;
-  border-top: 1px solid var(--color-border);
-  background: none;
+  border-radius: var(--radius-md);
+  background: rgba(179, 38, 30, 0.22);
   color: var(--color-error);
   font-family: inherit;
   font-size: 15px;
   font-weight: var(--font-weight-medium);
   cursor: pointer;
   text-align: left;
+}
+
+.admin-sidebar__logout:hover {
+  background: rgba(179, 38, 30, 0.34);
 }
 
 @media (max-width: 1024px) {
