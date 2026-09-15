@@ -6,10 +6,13 @@
   --color-secondary: #fbba16;
   --color-text-muted: #000000;
 
+  --white-1: #ffffff;
+  --white-2: #f5f8f7;
+
   min-height: calc(100svh - 76px);
   display: flex;
   align-items: center;
-  background: var(--color-bg-alt);
+  background: var(--white-1);
 }
 
 .connexion__inner {

@@ -6,7 +6,10 @@
   --color-secondary: #fbba16;
   --color-text-muted: #000000;
 
-  background: var(--color-bg-alt);
+  --white-1: #ffffff;
+  --white-2: #f5f8f7;
+
+  background: var(--white-1);
   min-height: calc(100svh - 76px);
   display: flex;
   align-items: center;
