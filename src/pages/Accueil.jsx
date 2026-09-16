@@ -195,6 +195,16 @@ function Accueil() {
         </div>
       </section>
 
+      <section className="temoignages-video">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Témoignages vidéo"
+            title="Elles racontent leur expérience à l'ESC"
+            description="Découvrez en vidéo les parcours et les réussites de nos apprenantes."
+          />
+        </div>
+      </section>
+
       <section className="faq">
         <div className="container">
           <SectionTitle
