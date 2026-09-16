@@ -293,6 +293,24 @@ export const formations = [
   },
 ];
 
+const FORMATION_IMAGES = {
+  savonnerie: "/img_formation/savonnerie_esc.jpg",
+  emulsion: "/img_formation/emulsion_esc.jpg",
+  solutions: "/img_formation/solutions_esc.jpg",
+  anhydre: "/img_formation/anhydre_esc.jpeg",
+  capillaire: "/img_formation/capillaire_esc.jpg",
+  detergents: "/img_formation/détergents_esc.jpg",
+  "traitement-problemes-corporels": "/img_formation/Traitement_des_problèmes_corporel_esc.jpg",
+  "bougie-decorative": "/img_formation/bougie_decorative_esc.jpeg",
+  "objet-decoration-gypsum": "/img_formation/objet_de_décoration_en_Gypsum_esc.jpg",
+};
+
+const DEFAULT_FORMATION_IMAGE = "/img_formation/savonnerie_esc.jpg";
+
+export function getFormationImage(formation) {
+  return FORMATION_IMAGES[formation?.slug] ?? DEFAULT_FORMATION_IMAGE;
+}
+
 export function getFormationBySlug(slug) {
   return formations.find((f) => f.slug === slug);
 }

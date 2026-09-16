@@ -8,7 +8,13 @@ import TestimonialCard from "../components/TestimonialCardComponent";
 import FormationCard from "../components/FormationCardComponent";
 import { useFetch } from "../hooks/useFetch";
 import api from "../lib/api";
-import { formatPrix, getFormationBySlug, getFormationsSimilaires, formations as formationsMock } from "../data/formations";
+import {
+  formatPrix,
+  getFormationImage,
+  getFormationBySlug,
+  getFormationsSimilaires,
+  formations as formationsMock,
+} from "../data/formations";
 import { getTemoignageByFormationSlug } from "../data/temoignages";
 import "./FormationDetail.css";
 
@@ -70,7 +76,7 @@ function FormationDetail() {
       <section className="formation-detail-hero">
         <div className="container">
           <div className="formation-detail-hero__card">
-            <img className="formation-detail-hero__image" src={formation.image} alt={formation.nom} />
+            <img className="formation-detail-hero__image" src={getFormationImage(formation)} alt={formation.nom} />
             <div className="formation-detail-hero__overlay" />
             <div className="formation-detail-hero__text">
               <h6>Formation</h6>
