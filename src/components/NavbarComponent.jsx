@@ -7,9 +7,8 @@ import "./Navbar.css";
 
 const links = [
   { to: "/", label: "Accueil" },
-  { to: "/ecole", label: "L'École" },
+  { to: "/ecole", label: "À propos" },
   { to: "/formations", label: "Formations" },
-  { to: "/temoignages", label: "Témoignages" },
   { to: "/contact", label: "Contact" },
 ];
 
