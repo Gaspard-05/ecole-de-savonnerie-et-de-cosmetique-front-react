@@ -5,6 +5,7 @@ import SectionTitle from "../components/SectionTitleComponent";
 import SectionCTA from "../components/SectionCTAComponent";
 import FormationCard from "../components/FormationCardComponent";
 import TestimonialCard from "../components/TestimonialCardComponent";
+import VideoCard from "../components/VideoCardComponent";
 import StatBlock from "../components/StatBlockComponent";
 import Faq from "../components/FaqComponent";
 import { useFetch } from "../hooks/useFetch";
@@ -73,6 +74,9 @@ function Accueil() {
   const formationsAffichees = formations.slice(0, 3);
   const nombreFormations = loading ? "Nos" : formations.length;
   const temoignagesAffiches = temoignages.slice(0, 3);
+
+  const { data: videosData } = useFetch("/videos");
+  const videos = Array.isArray(videosData) ? videosData : videosData?.data ?? [];
 
   return (
     <div className="accueil">
@@ -195,15 +199,22 @@ function Accueil() {
         </div>
       </section>
 
-      <section className="temoignages-video">
-        <div className="container">
-          <SectionTitle
-            eyebrow="Témoignages vidéo"
-            title="Elles racontent leur expérience à l'ESC"
-            description="Découvrez en vidéo les parcours et les réussites de nos apprenantes."
-          />
-        </div>
-      </section>
+      {videos.length > 0 && (
+        <section className="temoignages-video">
+          <div className="container">
+            <SectionTitle
+              eyebrow="Témoignages vidéo"
+              title="Elles racontent leur expérience à l'ESC"
+              description="Découvrez en vidéo les parcours et les réussites de nos apprenantes."
+            />
+            <div className="temoignages-video__grid">
+              {videos.map((video) => (
+                <VideoCard key={video.id} video={video} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       <section className="faq">
         <div className="container">

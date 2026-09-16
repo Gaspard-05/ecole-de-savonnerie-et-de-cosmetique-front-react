@@ -198,9 +198,33 @@
   background: var(--color-primary-light);
 }
 
+/* Témoignages vidéo */
+.temoignages-video {
+  background: var(--white-2);
+}
+
+.temoignages-video__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 32px;
+}
+
+@media (max-width: 900px) {
+  .temoignages-video__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .temoignages-video__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* FAQ */
 .faq {
-  background: var(--white-2);
+  background: var(--white-1);
 }
 
 @media (max-width: 1024px) {
