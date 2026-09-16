@@ -12,7 +12,7 @@ function VideoAdminCard({ video }) {
       </div>
       <div className="video-admin-card__body">
         <h3>{video.title}</h3>
-        <span className="video-admin-card__formation">{video.formation}</span>
+        <span className="video-admin-card__formation">{video.formation?.nom}</span>
         <div className="video-admin-card__actions">
           <button type="button" className="video-admin-card__action" title="Modifier" aria-label="Modifier">
             <Pencil size={17} />
