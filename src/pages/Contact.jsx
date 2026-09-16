@@ -1,6 +1,6 @@
 import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
-import ContactForm from "../components/ContactForm";
-import SectionCTA from "../components/SectionCTA";
+import ContactForm from "../components/ContactFormComponent";
+import SectionCTA from "../components/SectionCTAComponent";
 import "./Contact.css";
 
 const coordonnees = [

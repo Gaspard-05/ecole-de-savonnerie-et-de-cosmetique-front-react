@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
-import Button from "./Button";
+import Button from "./ButtonComponent";
 import { formations as formationsMock } from "../data/formations";
 import { useFetch, postJSON } from "../hooks/useFetch";
 import "./Form.css";

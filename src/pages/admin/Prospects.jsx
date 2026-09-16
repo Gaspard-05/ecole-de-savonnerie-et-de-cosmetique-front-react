@@ -1,4 +1,4 @@
-import PageHeader from "../../components/admin/PageHeader";
+import PageHeader from "../../components/admin/PageHeaderComponent";
 import { useFetch } from "../../hooks/useFetch";
 import "./Prospects.css";
 

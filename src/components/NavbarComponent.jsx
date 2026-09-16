@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { Menu, X, LogIn } from "lucide-react";
-import Button from "./Button";
+import Button from "./ButtonComponent";
 import logo from "../assets/logo/esc-logo-png-1536x689.webp";
 import "./Navbar.css";
 

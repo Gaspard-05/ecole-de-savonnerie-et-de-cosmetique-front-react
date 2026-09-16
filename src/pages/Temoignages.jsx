@@ -1,6 +1,6 @@
-import TestimonialCard from "../components/TestimonialCard";
-import SectionCTA from "../components/SectionCTA";
-import Button from "../components/Button";
+import TestimonialCard from "../components/TestimonialCardComponent";
+import SectionCTA from "../components/SectionCTAComponent";
+import Button from "../components/ButtonComponent";
 import { temoignages } from "../data/temoignages";
 import "./Temoignages.css";
 

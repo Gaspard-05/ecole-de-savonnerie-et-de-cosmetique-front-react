@@ -1,6 +1,6 @@
 import { Download } from "lucide-react";
-import PageHeader from "../../components/admin/PageHeader";
-import TelechargementFiliereCard from "../../components/admin/TelechargementFiliereCard";
+import PageHeader from "../../components/admin/PageHeaderComponent";
+import TelechargementFiliereCard from "../../components/admin/TelechargementFiliereCardComponent";
 import { useFetch } from "../../hooks/useFetch";
 import "./TelechargementsAdmin.css";
 

@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { ArrowLeft, Clock, ListChecks, TrendingUp } from "lucide-react";
-import PageHeader from "../../components/admin/PageHeader";
-import Button from "../../components/Button";
+import PageHeader from "../../components/admin/PageHeaderComponent";
+import Button from "../../components/ButtonComponent";
 import { useFetch } from "../../hooks/useFetch";
 import { formatPrix } from "../../data/formations";
 import "./FormationDetailAdmin.css";

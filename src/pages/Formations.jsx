@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { Download } from "lucide-react";
 import Swal from "sweetalert2";
-import Button from "../components/Button";
-import FormationCard from "../components/FormationCard";
-import SectionCTA from "../components/SectionCTA";
+import Button from "../components/ButtonComponent";
+import FormationCard from "../components/FormationCardComponent";
+import SectionCTA from "../components/SectionCTAComponent";
 import { useFetch } from "../hooks/useFetch";
 import api from "../lib/api";
 import { formations as formationsMock } from "../data/formations";

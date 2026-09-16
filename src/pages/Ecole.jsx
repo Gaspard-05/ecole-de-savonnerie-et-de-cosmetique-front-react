@@ -1,6 +1,6 @@
 import { HandHeart, Target, Award, Handshake, LifeBuoy, Hammer } from "lucide-react";
-import SectionTitle from "../components/SectionTitle";
-import SectionCTA from "../components/SectionCTA";
+import SectionTitle from "../components/SectionTitleComponent";
+import SectionCTA from "../components/SectionCTAComponent";
 import { galerie } from "../data/galerie";
 import "./Ecole.css";
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Star } from "lucide-react";
-import PageHeader from "../../components/admin/PageHeader";
-import Button from "../../components/Button";
+import PageHeader from "../../components/admin/PageHeaderComponent";
+import Button from "../../components/ButtonComponent";
 import { useFetch } from "../../hooks/useFetch";
 import "../../components/Form.css";
 import "./AjouterTemoignage.css";

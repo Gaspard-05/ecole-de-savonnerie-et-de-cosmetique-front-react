@@ -1,4 +1,4 @@
-import Button from "../Button";
+import Button from "../ButtonComponent";
 import "./PageHeader.css";
 
 function PageHeader({ title, subtitle, actionLabel, actionIcon: ActionIcon, to, onAction }) {

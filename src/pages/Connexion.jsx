@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Lock } from "lucide-react";
-import Button from "../components/Button";
+import Button from "../components/ButtonComponent";
 import { login } from "../lib/auth";
 import "./Connexion.css";
 import "../components/Form.css";

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import PageHeader from "../../components/admin/PageHeader";
-import FormationAdminCard from "../../components/admin/FormationAdminCard";
+import PageHeader from "../../components/admin/PageHeaderComponent";
+import FormationAdminCard from "../../components/admin/FormationAdminCardComponent";
 import { useFetch } from "../../hooks/useFetch";
 import "./FormationsAdmin.css";
 

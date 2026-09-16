@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Eye, Plus, Star } from "lucide-react";
-import PageHeader from "../../components/admin/PageHeader";
+import PageHeader from "../../components/admin/PageHeaderComponent";
 import { useFetch } from "../../hooks/useFetch";
 import "./TemoignagesAdmin.css";
 

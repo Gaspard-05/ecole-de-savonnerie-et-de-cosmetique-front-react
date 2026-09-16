@@ -1,5 +1,5 @@
 import { Settings, Construction } from "lucide-react";
-import PageHeader from "../../components/admin/PageHeader";
+import PageHeader from "../../components/admin/PageHeaderComponent";
 import "./static-page.css";
 
 function Parametres() {

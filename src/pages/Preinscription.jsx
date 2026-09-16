@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import PreinscriptionForm from "../components/PreinscriptionForm";
+import PreinscriptionForm from "../components/PreinscriptionFormComponent";
 import { getFormationBySlug } from "../data/formations";
 import "./Preinscription.css";
 

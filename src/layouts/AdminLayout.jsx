@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Navigate, Outlet } from "react-router-dom";
-import Sidebar from "../components/admin/Sidebar";
-import Topbar from "../components/admin/Topbar";
+import Sidebar from "../components/admin/SidebarComponent";
+import Topbar from "../components/admin/TopbarComponent";
 import { isAuthenticated } from "../lib/auth";
 import "./AdminLayout.css";
 

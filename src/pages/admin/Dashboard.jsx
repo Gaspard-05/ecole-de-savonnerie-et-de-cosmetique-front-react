@@ -1,7 +1,7 @@
 import { Users, BookOpen, Wallet, TrendingUp } from "lucide-react";
-import KpiCard from "../../components/admin/KpiCard";
-import BarChartCard from "../../components/admin/BarChartCard";
-import PieChartCard from "../../components/admin/PieChartCard";
+import KpiCard from "../../components/admin/KpiCardComponent";
+import BarChartCard from "../../components/admin/BarChartCardComponent";
+import PieChartCard from "../../components/admin/PieChartCardComponent";
 import { kpis, inscriptionsParMois, repartitionParFiliere } from "../../data/dashboard";
 import "./Dashboard.css";
 

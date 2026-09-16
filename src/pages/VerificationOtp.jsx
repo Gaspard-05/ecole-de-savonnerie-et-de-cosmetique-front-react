@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import { useLocation, useNavigate, Navigate } from "react-router-dom";
 import { MailCheck } from "lucide-react";
-import Button from "../components/Button";
+import Button from "../components/ButtonComponent";
 import { verifyOtpCode } from "../lib/auth";
 import "./VerificationOtp.css";
 import "../components/Form.css";

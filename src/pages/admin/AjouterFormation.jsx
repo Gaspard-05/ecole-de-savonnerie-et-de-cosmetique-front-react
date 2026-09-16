@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import PageHeader from "../../components/admin/PageHeader";
-import Button from "../../components/Button";
+import PageHeader from "../../components/admin/PageHeaderComponent";
+import Button from "../../components/ButtonComponent";
 import api from "../../lib/api";
 import "../../components/Form.css";
 import "./AjouterFormation.css";

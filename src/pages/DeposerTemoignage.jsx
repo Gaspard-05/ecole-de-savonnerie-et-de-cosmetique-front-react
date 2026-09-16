@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 import { Star } from "lucide-react";
-import Button from "../components/Button";
+import Button from "../components/ButtonComponent";
 import { useFetch, postJSON } from "../hooks/useFetch";
 import { formations as formationsMock } from "../data/formations";
 import "./DeposerTemoignage.css";
