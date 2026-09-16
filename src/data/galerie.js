@@ -5,12 +5,12 @@ export const galerie = [
   {
     id: 1,
     url: "/images/esc_1.jpeg",
-    alt: "Apprenante en plein atelier de fabrication artisanale",
+    alt: "Quelques produits de cosmétique artisanale sur la table d'un atelier ESC",
   },
   {
     id: 2,
     url: "/images/esc_2.jpeg",
-    alt: "Formatrice ESC accompagnant une apprenante",
+    alt: "Apprenante en train de fabriquer un produit cosmétique lors d'un atelier pratique ESC",
   },
   {
     id: 3,
@@ -20,12 +20,12 @@ export const galerie = [
   {
     id: 4,
     url: "/images/esc_4.jpeg",
-    alt: "Apprentie en pleine fabrication artisanale lors d'un atelier ESC",
+    alt: "Quelques produits dans des boites et pots, sur la table d'un atelier ESC",
   },
   {
     id: 5,
     url: "/images/esc_5.jpeg",
-    alt: "Atelier pratique en petit groupe",
+    alt: "Photo d'ensemble de quelques apprenantes en atelier pratique",
   },
   {
     id: 6,
@@ -35,11 +35,11 @@ export const galerie = [
   {
     id: 7,
     url: "/images/esc_7.jpg",
-    alt: "Mise en pratique des techniques apprises en formation",
+    alt: "Apprenantes gardant des sacs en main",
   },
   {
     id: 8,
     url: "/images/esc_8.jpg",
-    alt: "Fabrication de savons artisanaux en atelier ESC",
+    alt: "Photos de quelques savons fabriqués par les apprenantes, posés sur une table",
   },
 ];
