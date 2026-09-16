@@ -8,43 +8,58 @@
   flex-direction: column;
 }
 
-.formation-admin-card__media {
-  aspect-ratio: 16 / 10;
-  overflow: hidden;
-  background: var(--color-bg-alt);
-}
-
-.formation-admin-card__media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .formation-admin-card__body {
-  padding: 18px 18px 16px;
+  padding: 24px 24px 20px;
   display: flex;
   flex-direction: column;
   flex: 1;
 }
 
-.formation-admin-card__body h3 {
-  margin-bottom: 8px;
-  font-size: 17px;
+.formation-admin-card__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.formation-admin-card__header h3 {
+  font-size: 20px;
+}
+
+.formation-admin-card__price {
+  flex-shrink: 0;
+  font-size: 15px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
 }
 
 .formation-admin-card__meta {
   display: flex;
-  gap: 14px;
-  font-size: 13px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 15px;
   font-weight: var(--font-weight-semibold);
   color: var(--color-secondary);
-  margin-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.formation-admin-card__certification {
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .formation-admin-card__body p {
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 1.5;
   flex: 1;
-  margin-bottom: 14px;
+  margin-bottom: 18px;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -53,14 +68,14 @@
 
 .formation-admin-card__actions {
   display: flex;
-  gap: 8px;
-  padding-top: 12px;
+  gap: 10px;
+  padding-top: 14px;
   border-top: 1px solid var(--color-border);
 }
 
 .formation-admin-card__action {
-  width: 34px;
-  height: 34px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   background: var(--color-bg-alt);

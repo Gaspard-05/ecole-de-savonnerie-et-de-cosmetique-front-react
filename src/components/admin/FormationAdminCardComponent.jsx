@@ -6,14 +6,18 @@ import "./FormationAdminCard.css";
 function FormationAdminCard({ formation, onDelete }) {
   return (
     <article className="formation-admin-card">
-      <div className="formation-admin-card__media">
-        <img src={formation.image} alt={formation.nom} loading="lazy" />
-      </div>
       <div className="formation-admin-card__body">
-        <h3>{formation.nom}</h3>
+        <div className="formation-admin-card__header">
+          <h3>{formation.nom}</h3>
+          <span className="formation-admin-card__price">{formatPrix(formation.prix)}</span>
+        </div>
         <div className="formation-admin-card__meta">
           <span>{formation.duree}</span>
-          <span>{formatPrix(formation.prix)}</span>
+          {formation.certification && (
+            <span className="formation-admin-card__certification" title={formation.certification}>
+              {formation.certification}
+            </span>
+          )}
         </div>
         <p>{formation.resume ?? formation.description}</p>
 
