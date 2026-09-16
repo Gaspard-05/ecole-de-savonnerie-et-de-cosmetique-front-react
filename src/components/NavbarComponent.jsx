@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { Menu, X, LogIn } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Button from "./ButtonComponent";
 import logo from "../assets/logo/esc-logo-png-1536x689.webp";
 import "./Navbar.css";
@@ -61,9 +61,6 @@ function Navbar() {
             <Button to="/preinscription" variant="primary" size="sm">
               Se pré-inscrire
             </Button>
-            <NavLink to="/connexion" className="navbar__login" aria-label="Connexion administration">
-              <LogIn size={18} />
-            </NavLink>
           </div>
         </nav>
 
