@@ -14,14 +14,16 @@ function SectionCTA({
 }) {
   return (
     <section className={`section-cta section-cta--${variant}`}>
-      <div className="container section-cta__inner">
-        <div>
-          <h2>{title}</h2>
-          {description && <p>{description}</p>}
+      <div className="container">
+        <div className="section-cta__inner">
+          <div>
+            <h2>{title}</h2>
+            {description && <p>{description}</p>}
+          </div>
+          <Button to={buttonTo} variant={variant === "brand" ? "primary" : "outline"} size="lg">
+            {buttonLabel}
+          </Button>
         </div>
-        <Button to={buttonTo} variant={variant === "brand" ? "primary" : "outline"} size="lg">
-          {buttonLabel}
-        </Button>
       </div>
     </section>
   );
