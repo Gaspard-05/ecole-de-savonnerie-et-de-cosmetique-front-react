@@ -6,7 +6,7 @@
   --color-secondary: #fbba16;
 
   position: fixed;
-  right: 24px;
+  right: 84px;
   bottom: 24px;
   z-index: 90;
   display: inline-flex;
@@ -30,7 +30,7 @@
 
 @media (max-width: 640px) {
   .back-to-top {
-    right: 16px;
+    right: 72px;
     bottom: 16px;
     width: 44px;
     height: 44px;

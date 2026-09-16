@@ -1,0 +1,37 @@
+.whatsapp-button {
+  /* Scopé localement (comme Navbar/Footer/BackToTopButton) : ce bouton vit hors
+     des wrappers de page qui portent la palette vert/or, donc il ne l'hérite pas. */
+  --color-primary: #02462e;
+  --color-primary-dark: #012e1e;
+
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.whatsapp-button:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 640px) {
+  .whatsapp-button {
+    right: 16px;
+    bottom: 16px;
+    width: 44px;
+    height: 44px;
+  }
+}
