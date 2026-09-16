@@ -1,7 +1,8 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 import Button from "./ButtonComponent";
-import { formations as formationsMock } from "../data/formations";
+import SelectDropdown from "./SelectDropdownComponent";
+import { formations as formationsMock, formatNomOption } from "../data/formations";
 import { useFetch, postJSON } from "../hooks/useFetch";
 import "./Form.css";
 
@@ -76,14 +77,13 @@ function ContactForm() {
     <form className="form" onSubmit={handleSubmit} noValidate>
       <div className="form__field">
         <label htmlFor="formationSlug">Formation concernée (optionnel)</label>
-        <select id="formationSlug" name="formationSlug" value={values.formationSlug} onChange={handleChange}>
-          <option value="">Question générale</option>
-          {formations.map((f) => (
-            <option key={f.slug} value={f.slug}>
-              {f.nom}
-            </option>
-          ))}
-        </select>
+        <SelectDropdown
+          id="formationSlug"
+          value={values.formationSlug}
+          onChange={(val) => setValues((v) => ({ ...v, formationSlug: val }))}
+          placeholder="Question générale"
+          options={formations.map((f) => ({ value: f.slug, label: formatNomOption(f.nom) }))}
+        />
       </div>
 
       <div className="form__row">

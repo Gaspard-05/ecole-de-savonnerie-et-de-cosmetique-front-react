@@ -25,6 +25,8 @@
 .form__field input,
 .form__field select,
 .form__field textarea {
+  width: 100%;
+  min-width: 0;
   font-family: var(--font-base);
   font-size: 16px;
   padding: 13px 16px;

@@ -304,3 +304,9 @@ export function getFormationsSimilaires(slug, count = 3) {
 export function formatPrix(prix) {
   return new Intl.NumberFormat("fr-FR").format(prix) + " FCFA";
 }
+
+// Tronque un nom de formation trop long pour les <option> des <select> —
+// la liste déroulée native peut déborder de l'écran sinon.
+export function formatNomOption(nom, max = 28) {
+  return nom.length > max ? `${nom.slice(0, max - 1).trimEnd()}…` : nom;
+}

@@ -2,8 +2,9 @@ import { useState } from "react";
 import Swal from "sweetalert2";
 import { Star } from "lucide-react";
 import Button from "../components/ButtonComponent";
+import SelectDropdown from "../components/SelectDropdownComponent";
 import { useFetch, postJSON } from "../hooks/useFetch";
-import { formations as formationsMock } from "../data/formations";
+import { formations as formationsMock, formatNomOption } from "../data/formations";
 import "./DeposerTemoignage.css";
 import "../components/Form.css";
 
@@ -92,19 +93,14 @@ function DeposerTemoignage() {
 
             <div className={`form__field ${errors.formation ? "form__field--error" : ""}`}>
               <label htmlFor="formationSlug">Formation suivie</label>
-              <select
+              <SelectDropdown
                 id="formationSlug"
-                name="formationSlug"
                 value={values.formationSlug}
-                onChange={handleChange}
-              >
-                <option value="">Sélectionner une formation</option>
-                {formations.map((f) => (
-                  <option key={f.slug} value={f.slug}>
-                    {f.nom}
-                  </option>
-                ))}
-              </select>
+                onChange={(val) => setValues((v) => ({ ...v, formationSlug: val }))}
+                placeholder="Sélectionner une formation"
+                error={!!errors.formation}
+                options={formations.map((f) => ({ value: f.slug, label: formatNomOption(f.nom) }))}
+              />
               {errors.formation && <span className="form__error">{errors.formation}</span>}
             </div>
 
