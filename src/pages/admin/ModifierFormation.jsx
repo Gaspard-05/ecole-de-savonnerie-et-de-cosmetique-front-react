@@ -38,20 +38,12 @@ function valuesFromFormation(formation) {
 function ModifierFormationForm({ formation }) {
   const navigate = useNavigate();
   const [values, setValues] = useState(() => valuesFromFormation(formation));
-  const [image, setImage] = useState(null);
-  const [imagePreview, setImagePreview] = useState(formation.image ?? null);
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
 
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
     setValues((v) => ({ ...v, [name]: type === "checkbox" ? checked : value }));
-  }
-
-  function handleImageChange(e) {
-    const file = e.target.files?.[0] ?? null;
-    setImage(file);
-    setImagePreview(file ? URL.createObjectURL(file) : formation.image ?? null);
   }
 
   async function handleSubmit(e) {
@@ -72,7 +64,6 @@ function ModifierFormationForm({ formation }) {
     linesToArray(values.modules).forEach((item) => formData.append("modules[]", item));
     linesToArray(values.debouches).forEach((item) => formData.append("debouches[]", item));
     formData.append("is_active", values.isActive ? "1" : "0");
-    if (image) formData.append("image", image);
 
     try {
       await api.post(`/admin/formations/${formation.id}`, formData);
@@ -109,18 +100,9 @@ function ModifierFormationForm({ formation }) {
         </div>
       </div>
 
-      <div className="form__row">
-        <div className="form__field">
-          <label htmlFor="prix">Prix (FCFA)</label>
-          <input id="prix" name="prix" type="number" min="0" value={values.prix} onChange={handleChange} />
-        </div>
-        <div className="form__field">
-          <label htmlFor="image">Photo de la formation</label>
-          <input id="image" name="image" type="file" accept="image/*" onChange={handleImageChange} />
-          {imagePreview && (
-            <img src={imagePreview} alt="Aperçu" className="admin-ajouter-formation__preview" />
-          )}
-        </div>
+      <div className="form__field">
+        <label htmlFor="prix">Prix (FCFA)</label>
+        <input id="prix" name="prix" type="number" min="0" value={values.prix} onChange={handleChange} />
       </div>
 
       <div className="form__field">
