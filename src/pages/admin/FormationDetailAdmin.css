@@ -3,46 +3,68 @@
 }
 
 .admin-formation-detail__body {
-  display: grid;
-  grid-template-columns: 360px 1fr;
-  gap: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-sm);
-  padding: 24px;
+  padding: 28px;
 }
 
-.admin-formation-detail__image {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
-  border-radius: var(--radius-md);
+.admin-formation-detail__header {
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .admin-formation-detail__meta {
   display: flex;
   align-items: center;
-  gap: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 14px;
 }
 
-.admin-formation-detail__meta span {
+.admin-formation-detail__badge {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--color-text-muted);
   font-size: 14px;
+  font-weight: var(--font-weight-semibold);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
 }
 
 .admin-formation-detail__price {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: var(--font-weight-bold);
   color: var(--color-primary);
+  background: color-mix(in srgb, var(--color-primary) 12%, transparent);
+}
+
+.admin-formation-detail__duree {
+  color: var(--color-secondary);
+  background: color-mix(in srgb, var(--color-secondary) 20%, transparent);
+}
+
+.admin-formation-detail__description {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+.admin-formation-detail__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .admin-formation-detail__block {
-  margin: 20px 0;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
 }
 
 .admin-formation-detail__block h3 {
@@ -50,13 +72,14 @@
   align-items: center;
   gap: 8px;
   font-size: 16px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+  color: var(--color-primary);
 }
 
 .admin-formation-detail__block ul {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
 .admin-formation-detail__block li {
@@ -77,8 +100,12 @@
   background: var(--color-secondary);
 }
 
+.admin-formation-detail__body > a {
+  align-self: flex-start;
+}
+
 @media (max-width: 720px) {
-  .admin-formation-detail__body {
+  .admin-formation-detail__grid {
     grid-template-columns: 1fr;
   }
 }

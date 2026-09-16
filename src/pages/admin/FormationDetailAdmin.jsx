@@ -26,18 +26,19 @@ function FormationDetailAdmin() {
 
       {formation && (
         <div className="admin-formation-detail__body">
-          <img className="admin-formation-detail__image" src={formation.image} alt={formation.nom} />
-
-          <div className="admin-formation-detail__content">
+          <div className="admin-formation-detail__header">
             <div className="admin-formation-detail__meta">
-              <span className="admin-formation-detail__price">{formatPrix(formation.prix)}</span>
-              <span>
+              <span className="admin-formation-detail__badge admin-formation-detail__price">
+                {formatPrix(formation.prix)}
+              </span>
+              <span className="admin-formation-detail__badge admin-formation-detail__duree">
                 <Clock size={16} aria-hidden="true" /> {formation.duree}
               </span>
             </div>
+            <p className="admin-formation-detail__description">{formation.description}</p>
+          </div>
 
-            <p>{formation.description}</p>
-
+          <div className="admin-formation-detail__grid">
             {formation.modules?.length > 0 && (
               <div className="admin-formation-detail__block">
                 <h3>
@@ -63,11 +64,11 @@ function FormationDetailAdmin() {
                 </ul>
               </div>
             )}
-
-            <Button to="/admin/formations" variant="outline">
-              Retour à la liste
-            </Button>
           </div>
+
+          <Button to="/admin/formations" variant="outline">
+            Retour à la liste
+          </Button>
         </div>
       )}
     </div>
