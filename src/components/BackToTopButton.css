@@ -1,6 +1,5 @@
 .back-to-top {
-  /* Scopé localement (comme Navbar/Footer) : ce bouton vit hors des wrappers
-     de page qui portent la palette vert/or, donc il ne l'hérite pas. */
+  /* vars locales, comme Navbar/Footer : hors des wrappers de page, pas d'héritage sinon */
   --color-primary: #02462e;
   --color-primary-dark: #012e1e;
   --color-secondary: #fbba16;
@@ -28,10 +27,16 @@
   transform: translateY(-3px);
 }
 
+/* Décalé au-dessus de la bottom nav fixe sur tablette/mobile */
+@media (max-width: 900px) {
+  .back-to-top {
+    bottom: calc(var(--bottom-nav-height) + 16px);
+  }
+}
+
 @media (max-width: 640px) {
   .back-to-top {
     right: 72px;
-    bottom: 16px;
     width: 44px;
     height: 44px;
   }

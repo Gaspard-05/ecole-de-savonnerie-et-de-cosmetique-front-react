@@ -1,0 +1,6 @@
+/* espace pour la bottom nav fixe, sinon le footer se retrouve caché dessous */
+@media (max-width: 900px) {
+  .public-main {
+    padding-bottom: var(--bottom-nav-height);
+  }
+}

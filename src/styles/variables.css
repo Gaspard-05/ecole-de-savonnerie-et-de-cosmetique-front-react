@@ -36,6 +36,7 @@
   --font-weight-bold: 700;
 
   --container-width: 1200px;
+  --bottom-nav-height: 64px;
 
   --transition-fast: 0.18s ease;
   --transition-base: 0.28s ease;
