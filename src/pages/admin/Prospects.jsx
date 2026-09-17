@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import { Eye } from "lucide-react";
 import PageHeader from "../../components/admin/PageHeaderComponent";
 import { useFetch } from "../../hooks/useFetch";
 import "./Prospects.css";
@@ -42,6 +44,7 @@ function Prospects() {
                   {/* <th>Message</th> — masqué pour le moment */}
                   <th>Statut</th>
                   <th>Date</th>
+                  <th>Action</th>
                 </tr>
               </thead>
               <tbody>
@@ -58,6 +61,15 @@ function Prospects() {
                       </span>
                     </td>
                     <td>{formatDate(item.date)}</td>
+                    <td>
+                      <Link
+                        to={`/admin/prospects/${item.id}`}
+                        className="admin-prospects__view"
+                        aria-label="Voir le prospect"
+                      >
+                        <Eye size={18} />
+                      </Link>
+                    </td>
                   </tr>
                 ))}
               </tbody>

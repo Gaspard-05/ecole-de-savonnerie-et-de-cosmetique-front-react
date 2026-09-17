@@ -1,0 +1,84 @@
+.admin-prospect-detail__status {
+  color: var(--color-text-muted);
+  margin-top: 16px;
+}
+
+.admin-prospect-detail__card {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 32px;
+  margin-top: 20px;
+  max-width: 640px;
+}
+
+.admin-prospect-detail__statut {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: var(--font-weight-medium);
+  background: var(--color-bg-alt);
+  color: var(--color-text-muted);
+  margin-bottom: 20px;
+}
+
+.admin-prospect-detail__statut--en_attente {
+  background: var(--color-secondary-light);
+  color: var(--color-secondary);
+}
+
+.admin-prospect-detail__statut--confirme {
+  background: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.admin-prospect-detail__statut--annule {
+  background: #fbe4e2;
+  color: var(--color-error);
+}
+
+.admin-prospect-detail__infos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 0 0 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.admin-prospect-detail__infos dt {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: 2px;
+}
+
+.admin-prospect-detail__infos dd {
+  margin: 0;
+  font-size: 15px;
+  font-weight: var(--font-weight-medium);
+}
+
+.admin-prospect-detail__block h3 {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.admin-prospect-detail__block p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text);
+}
+
+@media (max-width: 480px) {
+  .admin-prospect-detail__card {
+    padding: 24px 20px;
+  }
+
+  .admin-prospect-detail__infos {
+    grid-template-columns: 1fr;
+  }
+}
