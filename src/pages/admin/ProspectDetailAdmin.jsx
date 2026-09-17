@@ -1,14 +1,18 @@
-import { useParams } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
+import Swal from "sweetalert2";
 import PageHeader from "../../components/admin/PageHeaderComponent";
 import Button from "../../components/ButtonComponent";
 import { useFetch } from "../../hooks/useFetch";
+import api from "../../lib/api";
 import "./ProspectDetailAdmin.css";
 
 const STATUT_LABELS = {
   en_attente: "En attente",
   contacte: "Contacté",
   confirme: "Confirmé",
+  valide: "Validé",
   annule: "Annulé",
 };
 
@@ -21,10 +25,40 @@ function formatDate(value) {
   });
 }
 
+function getApiErrorMessage(err, fallback) {
+  const data = err.response?.data;
+  if (data?.errors) {
+    return Object.values(data.errors).flat().join(" ");
+  }
+  return data?.message || fallback;
+}
+
 function ProspectDetailAdmin() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const { data, loading, error } = useFetch(`/admin/pre-inscriptions/${id}`);
   const preinscription = data?.data ?? data;
+  const [submitting, setSubmitting] = useState(false);
+  const [actionError, setActionError] = useState("");
+
+  async function handleValider() {
+    setSubmitting(true);
+    setActionError("");
+    try {
+      const { data: res } = await api.patch(`/admin/pre-inscriptions/${id}/valider`);
+      await Swal.fire({
+        icon: "success",
+        title: "Pré-inscription validée",
+        text: res.message,
+        confirmButtonColor: "#02462e",
+      });
+      navigate("/admin/prospects");
+    } catch (err) {
+      setActionError(getApiErrorMessage(err, "Impossible de valider cette pré-inscription."));
+    } finally {
+      setSubmitting(false);
+    }
+  }
 
   return (
     <div className="admin-prospect-detail">
@@ -77,8 +111,15 @@ function ProspectDetailAdmin() {
             </div>
           )}
 
+          {actionError && <p className="admin-prospect-detail__error">{actionError}</p>}
+
           <div className="admin-prospect-detail__actions">
-            <Button type="button" variant="primary">
+            <Button
+              type="button"
+              variant="primary"
+              disabled={submitting || ["confirme", "valide"].includes(preinscription.statut)}
+              onClick={handleValider}
+            >
               Valider
             </Button>
             <Button type="button" variant="outline">

@@ -8,6 +8,7 @@ const STATUT_LABELS = {
   en_attente: "En attente",
   contacte: "Contacté",
   confirme: "Confirmé",
+  valide: "Validé",
   annule: "Annulé",
 };
 

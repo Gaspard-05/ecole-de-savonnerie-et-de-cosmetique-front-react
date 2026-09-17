@@ -29,8 +29,10 @@
   color: var(--color-secondary);
 }
 
-.admin-prospect-detail__statut--confirme {
-  background: var(--color-accent-light);
+.admin-prospect-detail__statut--confirme,
+.admin-prospect-detail__statut--valide {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
   color: var(--color-accent);
 }
 
@@ -71,6 +73,12 @@
   font-size: 15px;
   line-height: 1.6;
   color: var(--color-text);
+}
+
+.admin-prospect-detail__error {
+  color: var(--color-error);
+  font-size: 14px;
+  margin-top: 20px;
 }
 
 .admin-prospect-detail__actions {

@@ -64,8 +64,10 @@
   color: var(--color-secondary);
 }
 
-.admin-prospects__statut--confirme {
-  background: var(--color-accent-light);
+.admin-prospects__statut--confirme,
+.admin-prospects__statut--valide {
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-accent) 35%, transparent);
   color: var(--color-accent);
 }
 
