@@ -26,6 +26,8 @@
 .navbar__logo img {
   height: 46px;
   width: auto;
+  /* recolore le logo en #02462e */
+  filter: brightness(0) saturate(100%) invert(20%) sepia(14%) saturate(2957%) hue-rotate(112deg) brightness(95%) contrast(98%);
 }
 
 .navbar__right {
