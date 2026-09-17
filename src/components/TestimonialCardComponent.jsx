@@ -2,7 +2,7 @@ import { Star, Quote } from "lucide-react";
 import "./TestimonialCard.css";
 
 function TestimonialCard({ temoignage }) {
-  const { nom, formationNom, photo, note = 5, texte } = temoignage;
+  const { nom, formation, photo, note = 5, contenu } = temoignage;
 
   return (
     <article className="testimonial-card">
@@ -12,12 +12,12 @@ function TestimonialCard({ temoignage }) {
           <Star key={i} size={16} fill={i < note ? "currentColor" : "none"} />
         ))}
       </div>
-      <p className="testimonial-card__text">« {texte} »</p>
+      <p className="testimonial-card__text">« {contenu} »</p>
       <div className="testimonial-card__author">
         {photo && <img src={photo} alt={nom} className="testimonial-card__photo" />}
         <div>
           <p className="testimonial-card__name">{nom}</p>
-          {formationNom && <p className="testimonial-card__formation">Formation {formationNom}</p>}
+          {formation?.nom && <p className="testimonial-card__formation">Formation {formation.nom}</p>}
         </div>
       </div>
     </article>

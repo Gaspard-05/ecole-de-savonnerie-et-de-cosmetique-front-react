@@ -10,7 +10,6 @@ import StatBlock from "../components/StatBlockComponent";
 import Faq from "../components/FaqComponent";
 import { useFetch } from "../hooks/useFetch";
 import { formations as formationsMock } from "../data/formations";
-import { temoignages } from "../data/temoignages";
 import "./Accueil.css";
 
 const faqItems = [
@@ -73,7 +72,10 @@ function Accueil() {
   const formations = Array.isArray(data) ? data : data?.data ?? [];
   const formationsAffichees = formations.slice(0, 3);
   const nombreFormations = loading ? "Nos" : formations.length;
-  const temoignagesAffiches = temoignages.slice(0, 3);
+
+  const { data: temoignagesData, loading: temoignagesLoading } = useFetch("/reussites");
+  const temoignagesListe = Array.isArray(temoignagesData) ? temoignagesData : temoignagesData?.data ?? [];
+  const temoignagesAffiches = temoignagesListe.slice(0, 3);
 
   const { data: videosData } = useFetch("/videos");
   const videos = Array.isArray(videosData) ? videosData : videosData?.data ?? [];
@@ -186,11 +188,14 @@ function Accueil() {
             title="La réussite de nos diplômées"
             description="Des parcours inspirants, portés par un accompagnement de proximité."
           />
-          <div className="temoignages-preview__grid">
-            {temoignagesAffiches.map((temoignage) => (
-              <TestimonialCard key={temoignage.id} temoignage={temoignage} />
-            ))}
-          </div>
+          {temoignagesLoading && <p>Chargement des témoignages...</p>}
+          {!temoignagesLoading && temoignagesAffiches.length > 0 && (
+            <div className="temoignages-preview__grid">
+              {temoignagesAffiches.map((temoignage) => (
+                <TestimonialCard key={temoignage.id} temoignage={temoignage} />
+              ))}
+            </div>
+          )}
           <div className="formations-preview__more">
             <Link to="/temoignages" className="btn btn--outline btn--lg">
               Voir tous les témoignages →

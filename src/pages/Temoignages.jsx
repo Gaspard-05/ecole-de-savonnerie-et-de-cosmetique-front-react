@@ -1,10 +1,13 @@
 import TestimonialCard from "../components/TestimonialCardComponent";
 import SectionCTA from "../components/SectionCTAComponent";
 import Button from "../components/ButtonComponent";
-import { temoignages } from "../data/temoignages";
+import { useFetch } from "../hooks/useFetch";
 import "./Temoignages.css";
 
 function Temoignages() {
+  const { data, loading, error } = useFetch("/reussites");
+  const temoignages = Array.isArray(data) ? data : data?.data ?? [];
+
   return (
     <div className="temoignages">
       <section className="page-hero">
@@ -27,11 +30,17 @@ function Temoignages() {
             </Button>
           </div>
 
-          <div className="temoignages-list__grid">
-            {temoignages.map((temoignage) => (
-              <TestimonialCard key={temoignage.id} temoignage={temoignage} />
-            ))}
-          </div>
+          {loading && <p>Chargement des témoignages...</p>}
+          {error && <p>Impossible de charger les témoignages pour le moment.</p>}
+          {!loading && !error && temoignages.length === 0 && <p>Aucun témoignage publié pour le moment.</p>}
+
+          {!loading && !error && temoignages.length > 0 && (
+            <div className="temoignages-list__grid">
+              {temoignages.map((temoignage) => (
+                <TestimonialCard key={temoignage.id} temoignage={temoignage} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

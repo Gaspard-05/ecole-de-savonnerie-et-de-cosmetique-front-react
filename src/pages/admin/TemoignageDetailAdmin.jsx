@@ -33,19 +33,39 @@ function TemoignageDetailAdmin() {
   const [submitting, setSubmitting] = useState(false);
   const [actionError, setActionError] = useState("");
 
-  async function handlePublication(isPublished) {
+  async function handlePublier() {
     setSubmitting(true);
     setActionError("");
     try {
-      await api.patch(`/admin/reussites/${id}`, { is_published: isPublished });
+      const { data: res } = await api.patch(`/admin/reussites/${id}/publier`);
       await Swal.fire({
         icon: "success",
-        title: isPublished ? "Témoignage publié" : "Témoignage dépublié",
+        title: "Témoignage publié",
+        text: res.message,
         confirmButtonColor: "#02462e",
       });
       navigate("/admin/temoignages");
     } catch (err) {
-      setActionError(getApiErrorMessage(err, "Impossible de mettre à jour ce témoignage."));
+      setActionError(getApiErrorMessage(err, "Impossible de publier ce témoignage."));
+    } finally {
+      setSubmitting(false);
+    }
+  }
+
+  async function handleDepublier() {
+    setSubmitting(true);
+    setActionError("");
+    try {
+      const { data: res } = await api.patch(`/admin/reussites/${id}/depublier`);
+      await Swal.fire({
+        icon: "success",
+        title: "Témoignage dépublié",
+        text: res.message,
+        confirmButtonColor: "#02462e",
+      });
+      navigate("/admin/temoignages");
+    } catch (err) {
+      setActionError(getApiErrorMessage(err, "Impossible de dépublier ce témoignage."));
     } finally {
       setSubmitting(false);
     }
@@ -115,7 +135,7 @@ function TemoignageDetailAdmin() {
               type="button"
               variant="primary"
               disabled={submitting || temoignage.is_published}
-              onClick={() => handlePublication(true)}
+              onClick={handlePublier}
             >
               Publier
             </Button>
@@ -123,7 +143,7 @@ function TemoignageDetailAdmin() {
               type="button"
               variant="outline"
               disabled={submitting || !temoignage.is_published}
-              onClick={() => handlePublication(false)}
+              onClick={handleDepublier}
             >
               Dépublier
             </Button>
