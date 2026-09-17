@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import PageHeader from "../../components/admin/PageHeaderComponent";
+import Button from "../../components/ButtonComponent";
 import { useFetch } from "../../hooks/useFetch";
 import "./ProspectDetailAdmin.css";
 
@@ -75,6 +76,15 @@ function ProspectDetailAdmin() {
               <p>{preinscription.message}</p>
             </div>
           )}
+
+          <div className="admin-prospect-detail__actions">
+            <Button type="button" variant="primary">
+              Valider
+            </Button>
+            <Button type="button" variant="outline">
+              En attente
+            </Button>
+          </div>
         </div>
       )}
     </div>
