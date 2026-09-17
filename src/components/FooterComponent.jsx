@@ -7,7 +7,6 @@ import {
   FaEnvelope,
   FaMapMarkerAlt,
 } from "react-icons/fa";
-import { LogIn } from "lucide-react";
 import logo from "../assets/logo/esc-logo-png-1536x689.webp";
 import "./Footer.css";
 
@@ -77,9 +76,6 @@ function Footer() {
         <p>© {year} ESC — Tous droits réservés.</p>
         <div className="footer__bottom-links">
           <Link to="/mentions-legales">Mentions légales</Link>
-          <Link to="/connexion" className="footer__admin-link" aria-label="Connexion administration">
-            <LogIn size={14} /> Connexion
-          </Link>
         </div>
       </div>
     </footer>
