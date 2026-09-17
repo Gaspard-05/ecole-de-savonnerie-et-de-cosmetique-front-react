@@ -1,6 +1,15 @@
 import { useState } from "react";
-import { Navigate, useParams } from "react-router-dom";
-import { CheckCircle2, Clock, Download, GraduationCap, ListChecks, PackageCheck, TrendingUp } from "lucide-react";
+import { Link, Navigate, useParams } from "react-router-dom";
+import {
+  ArrowLeft,
+  CheckCircle2,
+  Clock,
+  Download,
+  GraduationCap,
+  ListChecks,
+  PackageCheck,
+  TrendingUp,
+} from "lucide-react";
 import Swal from "sweetalert2";
 import Button from "../components/ButtonComponent";
 import SectionTitle from "../components/SectionTitleComponent";
@@ -75,6 +84,9 @@ function FormationDetail() {
     <div className="formation-detail">
       <section className="formation-detail-hero">
         <div className="container">
+          <Link to="/formations" className="formation-detail-back">
+            <ArrowLeft size={18} /> Retour aux formations
+          </Link>
           <div className="formation-detail-hero__card">
             <img className="formation-detail-hero__image" src={getFormationImage(formation)} alt={formation.nom} />
             <div className="formation-detail-hero__overlay" />
