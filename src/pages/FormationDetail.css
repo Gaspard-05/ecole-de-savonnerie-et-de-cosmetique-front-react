@@ -241,8 +241,34 @@
   margin: 0 auto;
 }
 
+.formation-detail-inscription__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  margin-top: 48px;
+  text-align: center;
+}
+
+.formation-detail-inscription__inner p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary);
+}
+
 .formation-detail-cta {
   background: var(--color-primary);
+}
+
+.formation-detail-cta .btn--outline {
+  border-color: var(--color-white);
+  color: var(--color-white);
+}
+
+.formation-detail-cta .btn--outline:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
 }
 
 .formation-detail-cta__inner {
@@ -287,7 +313,8 @@
     align-items: flex-start;
   }
 
-  .formation-detail-cta__inner .btn {
+  .formation-detail-cta__inner .btn,
+  .formation-detail-inscription__inner .btn {
     width: 100%;
   }
 }

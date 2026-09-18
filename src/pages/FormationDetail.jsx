@@ -181,6 +181,13 @@ function FormationDetail() {
             </dl>
           </div>
         </div>
+
+        <div className="container formation-detail-inscription__inner">
+          <p>Places limitées à chaque session pour la formation {formation.nom}.</p>
+          <Button to={`/preinscription?formation=${formation.slug}`} variant="primary" size="lg">
+            Je veux me pré-inscrire
+          </Button>
+        </div>
       </section>
 
       {temoignage && (
@@ -197,11 +204,14 @@ function FormationDetail() {
       <section className="formation-detail-cta">
         <div className="container formation-detail-cta__inner">
           <div>
-            <h2>Prêt(e) à vous lancer dans la formation {formation.nom} ?</h2>
-            <p>Places limitées à chaque session — réservez la vôtre dès maintenant.</p>
+            <h2>Découvrez toutes les formations de l'ESC</h2>
+            <p>
+              Savonnerie, cosmétique, soins capillaires, artisanat : des spécialités 100 % pratiques,
+              avec une double certification ESC + CQM.
+            </p>
           </div>
-          <Button to={`/preinscription?formation=${formation.slug}`} variant="primary" size="lg">
-            Je veux me pré-inscrire
+          <Button to="/formations" variant="outline" size="lg">
+            Voir toutes les formations
           </Button>
         </div>
       </section>
