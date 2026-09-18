@@ -204,8 +204,7 @@
 }
 
 .temoignages-video__single {
-  max-width: 760px;
-  margin: 32px auto 0;
+  margin-top: 32px;
 }
 
 /* FAQ */
