@@ -27,8 +27,6 @@
   height: 44px;
   width: auto;
   display: block;
-  /* recolore le logo en #02462e */
-  filter: brightness(0) saturate(100%) invert(20%) sepia(14%) saturate(2957%) hue-rotate(112deg) brightness(95%) contrast(98%);
 }
 
 .footer__baseline {
@@ -117,6 +115,10 @@
   gap: 12px;
   font-size: 13px;
   opacity: 0.85;
+}
+
+.footer__bottom p {
+  color: var(--color-white);
 }
 
 .footer__bottom-links {
