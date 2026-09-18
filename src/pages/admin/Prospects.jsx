@@ -27,10 +27,10 @@ function Prospects() {
 
   return (
     <div className="admin-prospects">
-      <PageHeader title="Prospects" subtitle="Suivi des demandes de pré-inscription" />
+      <PageHeader title="Prospects" subtitle="Suivi des demandes de Pré-Inscription" />
 
       {loading && <p className="admin-prospects__status">Chargement...</p>}
-      {error && <p className="admin-prospects__status">Impossible de charger les pré-inscriptions.</p>}
+      {error && <p className="admin-prospects__status">Impossible de charger les Pré-Inscriptions.</p>}
 
       {!loading && !error && (
         preinscriptions.length > 0 ? (
@@ -77,7 +77,7 @@ function Prospects() {
             </table>
           </div>
         ) : (
-          <p className="admin-prospects__status">Aucune pré-inscription pour le moment.</p>
+          <p className="admin-prospects__status">Aucune Pré-Inscription pour le moment.</p>
         )
       )}
     </div>

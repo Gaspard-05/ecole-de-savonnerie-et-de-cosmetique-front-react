@@ -33,7 +33,7 @@ function Navbar() {
 
           <div className="navbar__actions">
             <Button to="/preinscription" variant="primary" size="sm">
-              Se pré-inscrire
+              Pré-Inscription
             </Button>
           </div>
         </div>

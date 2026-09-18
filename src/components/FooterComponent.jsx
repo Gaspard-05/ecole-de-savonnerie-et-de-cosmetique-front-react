@@ -65,10 +65,10 @@ function Footer() {
         </div>
 
         <div className="footer__col">
-          <h6>Pré-inscription</h6>
+          <h6>Pré-Inscription</h6>
           <p className="footer__cta-text">Prêt(e) à démarrer ? Réservez votre place dès aujourd'hui.</p>
           <Link to="/preinscription" className="footer__cta-link">
-            Se pré-inscrire →
+            Pré-Inscription →
           </Link>
         </div>
       </div>

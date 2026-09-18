@@ -8,7 +8,7 @@ import "./SectionCTA.css";
 function SectionCTA({
   title,
   description,
-  buttonLabel = "Se pré-inscrire",
+  buttonLabel = "Pré-Inscription",
   buttonTo = "/preinscription",
   variant = "brand",
 }) {

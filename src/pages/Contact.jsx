@@ -69,7 +69,7 @@ function Contact() {
       <SectionCTA
         title="Vous savez déjà quelle formation vous intéresse ?"
         description="Passez directement à l'étape suivante et réservez votre place."
-        buttonLabel="Se pré-inscrire"
+        buttonLabel="Pré-Inscription"
         buttonTo="/preinscription"
       />
     </div>

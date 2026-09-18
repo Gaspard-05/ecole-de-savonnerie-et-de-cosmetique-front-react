@@ -12,7 +12,7 @@ function Preinscription() {
     <section className="preinscription">
       <div className="container preinscription__inner">
         <div className="preinscription__intro">
-          <h6>Pré-inscription</h6>
+          <h6>Pré-Inscription</h6>
           <h1>Réservez votre place en quelques minutes</h1>
           <p>
             Remplissez le formulaire ci-dessous, notre équipe vous recontactera rapidement pour

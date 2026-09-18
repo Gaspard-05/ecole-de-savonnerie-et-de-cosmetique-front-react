@@ -19,7 +19,7 @@ function MentionsLegales() {
 
         <h2>Politique de confidentialité</h2>
         <p>
-          Les informations collectées via les formulaires de contact et de pré-inscription (nom,
+          Les informations collectées via les formulaires de contact et de Pré-Inscription (nom,
           téléphone, email, message) sont utilisées exclusivement dans le cadre du traitement de votre
           demande par l'équipe de l'ESC. Elles ne sont ni vendues ni transmises à des tiers à des fins
           commerciales.

@@ -68,8 +68,8 @@ function PreinscriptionForm({ preselectedSlug }) {
       });
       await Swal.fire({
         icon: "success",
-        title: "Pré-inscription enregistrée",
-        text: "Votre pré-inscription a été enregistrée. L'école vous contactera pour les procédures à suivre.",
+        title: "Pré-Inscription enregistrée",
+        text: "Votre Pré-Inscription a été enregistrée. L'école vous contactera pour les procédures à suivre.",
         confirmButtonColor: "#02462e",
       });
       setValues(getInitialState(preselectedSlug));
@@ -142,7 +142,7 @@ function PreinscriptionForm({ preselectedSlug }) {
       {errors.global && <span className="form__error">{errors.global}</span>}
 
       <Button type="submit" variant="primary" size="lg" className="form__submit" disabled={submitting}>
-        {submitting ? "Envoi en cours..." : "Envoyer ma pré-inscription"}
+        {submitting ? "Envoi en cours..." : "Envoyer ma Pré-Inscription"}
       </Button>
     </form>
   );

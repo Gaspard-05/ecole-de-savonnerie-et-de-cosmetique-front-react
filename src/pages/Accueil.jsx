@@ -29,9 +29,9 @@ const faqItems = [
       "Oui, chaque formation débouche sur une double certification : le certificat ESC et le CQM (Certificat de Qualification aux Métiers).",
   },
   {
-    question: "Comment se déroule la pré-inscription ?",
+    question: "Comment se déroule la Pré-Inscription ?",
     reponse:
-      "Il suffit de remplir le formulaire de pré-inscription en ligne. Notre équipe vous recontacte ensuite pour finaliser votre inscription.",
+      "Il suffit de remplir le formulaire de Pré-Inscription en ligne. Notre équipe vous recontacte ensuite pour finaliser votre inscription.",
   },
   {
     question: "Un accompagnement est-il proposé après la formation ?",
@@ -103,7 +103,7 @@ function Accueil() {
               </p>
               <div className="hero__actions">
                 <Button to="/preinscription" variant="primary" size="lg">
-                  Se pré-inscrire
+                  Pré-Inscription
                 </Button>
                 <Button to="/formations" variant="outline" size="lg">
                   Voir les formations
@@ -234,7 +234,7 @@ function Accueil() {
       <SectionCTA
         title="Prêt(e) à transformer votre passion en activité ?"
         description="Réservez votre place dès aujourd'hui : notre équipe vous accompagne à chaque étape."
-        buttonLabel="Se pré-inscrire"
+        buttonLabel="Pré-Inscription"
         buttonTo="/preinscription"
       />
     </div>

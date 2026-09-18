@@ -48,13 +48,13 @@ function ProspectDetailAdmin() {
       const { data: res } = await api.patch(`/admin/pre-inscriptions/${id}/valider`);
       await Swal.fire({
         icon: "success",
-        title: "Pré-inscription validée",
+        title: "Pré-Inscription validée",
         text: res.message,
         confirmButtonColor: "#02462e",
       });
       navigate("/admin/prospects");
     } catch (err) {
-      setActionError(getApiErrorMessage(err, "Impossible de valider cette pré-inscription."));
+      setActionError(getApiErrorMessage(err, "Impossible de valider cette Pré-Inscription."));
     } finally {
       setSubmitting(false);
     }
@@ -64,7 +64,7 @@ function ProspectDetailAdmin() {
     <div className="admin-prospect-detail">
       <PageHeader
         title={preinscription?.prospect?.nom ?? "Prospect"}
-        subtitle="Détail de la pré-inscription"
+        subtitle="Détail de la Pré-Inscription"
         actionLabel="Retour à la liste"
         actionIcon={ArrowLeft}
         to="/admin/prospects"

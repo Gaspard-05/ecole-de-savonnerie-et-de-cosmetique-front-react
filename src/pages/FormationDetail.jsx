@@ -97,7 +97,7 @@ function FormationDetail() {
               <p>{formation.description}</p>
               <div className="formation-detail-hero__actions">
                 <Button to={`/preinscription?formation=${formation.slug}`} variant="primary" size="md">
-                  Je veux me pré-inscrire
+                  Pré-Inscription
                 </Button>
                 <Button
                   type="button"
@@ -185,7 +185,7 @@ function FormationDetail() {
         <div className="container formation-detail-inscription__inner">
           <p>Places limitées à chaque session pour la formation {formation.nom}.</p>
           <Button to={`/preinscription?formation=${formation.slug}`} variant="primary" size="lg">
-            Je veux me pré-inscrire
+            Pré-Inscription
           </Button>
         </div>
       </section>
