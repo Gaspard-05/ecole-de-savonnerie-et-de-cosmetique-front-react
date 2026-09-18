@@ -28,8 +28,6 @@ import TemoignagesAdmin from "../pages/admin/TemoignagesAdmin";
 import TemoignageDetailAdmin from "../pages/admin/TemoignageDetailAdmin";
 import AjouterTemoignage from "../pages/admin/AjouterTemoignage";
 import Messages from "../pages/admin/Messages";
-import VideosAdmin from "../pages/admin/VideosAdmin";
-import AjouterVideo from "../pages/admin/AjouterVideo";
 
 function AppRouter() {
   return (
@@ -64,10 +62,7 @@ function AppRouter() {
           <Route path="/admin/temoignages" element={<TemoignagesAdmin />} />
           <Route path="/admin/temoignages/ajouter" element={<AjouterTemoignage />} />
           <Route path="/admin/temoignages/:id" element={<TemoignageDetailAdmin />} />
-          <Route path="/admin/messages" element={<Messages />} />
-          <Route path="/admin/videos" element={<VideosAdmin />} />
-          <Route path="/admin/videos/ajouter" element={<AjouterVideo />} />
-        </Route>
+          <Route path="/admin/messages" element={<Messages />} />        </Route>
       </Routes>
     </BrowserRouter>
   );

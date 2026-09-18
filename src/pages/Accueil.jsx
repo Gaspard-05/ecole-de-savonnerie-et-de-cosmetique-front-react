@@ -44,6 +44,12 @@ const faqItems = [
   },
 ];
 
+const videoTemoignage = {
+  title: "Clarisse APLOGAN",
+  video_path: "/videos/APLOGAN_Clarisse_esc_savonnerie.mp4",
+  formation: { nom: "Savonnerie" },
+};
+
 const atouts = [
   {
     icon: Sparkles,
@@ -76,9 +82,6 @@ function Accueil() {
   const { data: temoignagesData, loading: temoignagesLoading } = useFetch("/reussites");
   const temoignagesListe = Array.isArray(temoignagesData) ? temoignagesData : temoignagesData?.data ?? [];
   const temoignagesAffiches = temoignagesListe.slice(0, 3);
-
-  const { data: videosData } = useFetch("/videos");
-  const videos = Array.isArray(videosData) ? videosData : videosData?.data ?? [];
 
   return (
     <div className="accueil">
@@ -204,22 +207,18 @@ function Accueil() {
         </div>
       </section>
 
-      {videos.length > 0 && (
-        <section className="temoignages-video">
-          <div className="container">
-            <SectionTitle
-              eyebrow="Témoignages vidéo"
-              title="Elles racontent leur expérience à l'ESC"
-              description="Découvrez en vidéo les parcours et les réussites de nos apprenantes."
-            />
-            <div className="temoignages-video__grid">
-              {videos.map((video) => (
-                <VideoCard key={video.id} video={video} />
-              ))}
-            </div>
+      <section className="temoignages-video">
+        <div className="container">
+          <SectionTitle
+            eyebrow="Témoignages vidéo"
+            title="Elles racontent leur expérience à l'ESC"
+            description="Découvrez en vidéo les parcours et les réussites de nos apprenantes."
+          />
+          <div className="temoignages-video__single">
+            <VideoCard video={videoTemoignage} />
           </div>
-        </section>
-      )}
+        </div>
+      </section>
 
       <section className="faq">
         <div className="container">

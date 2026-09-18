@@ -1,5 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
-import { LayoutDashboard, BookOpen, Download, Users, Star, Mail, Video, LogOut, X } from "lucide-react";
+import { LayoutDashboard, BookOpen, Download, Users, Star, Mail, LogOut, X } from "lucide-react";
 import { logout } from "../../lib/auth";
 import { clearFetchCache } from "../../hooks/useFetch";
 import "./Sidebar.css";
@@ -11,7 +11,6 @@ const LINKS = [
   { to: "/admin/prospects", label: "Prospects", icon: Users },
   { to: "/admin/temoignages", label: "Témoignages", icon: Star },
   { to: "/admin/messages", label: "Messages", icon: Mail },
-  { to: "/admin/videos", label: "Gestion Vidéos", icon: Video },
 ];
 
 function Sidebar({ isOpen, onClose }) {
