@@ -8,6 +8,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import logo from "../assets/logo/esc-logo-png-1536x689.webp";
+import { TELEPHONE_DISPLAY, TELEPHONE_LINK, WHATSAPP_LINK } from "../data/contact";
 import "./Footer.css";
 
 function Footer() {
@@ -31,7 +32,7 @@ function Footer() {
             <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram">
               <FaInstagram />
             </a>
-            <a href="https://wa.me/22900000000" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+            <a href={WHATSAPP_LINK} target="_blank" rel="noreferrer" aria-label="WhatsApp">
               <FaWhatsapp />
             </a>
           </div>
@@ -52,7 +53,7 @@ function Footer() {
           <h6>Contact</h6>
           <ul className="footer__contact">
             <li>
-              <FaPhoneAlt /> <a href="tel:+22900000000">+229 00 00 00 00</a>
+              <FaPhoneAlt /> <a href={TELEPHONE_LINK}>{TELEPHONE_DISPLAY}</a>
             </li>
             <li>
               <FaEnvelope /> <a href="mailto:contact@esc-formation.com">contact@esc-formation.com</a>

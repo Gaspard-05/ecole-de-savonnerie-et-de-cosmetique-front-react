@@ -1,11 +1,12 @@
 import { FaPhoneAlt, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaClock } from "react-icons/fa";
 import ContactForm from "../components/ContactFormComponent";
 import SectionCTA from "../components/SectionCTAComponent";
+import { TELEPHONE_DISPLAY, TELEPHONE_LINK, WHATSAPP_DISPLAY, WHATSAPP_LINK } from "../data/contact";
 import "./Contact.css";
 
 const coordonnees = [
-  { icon: FaPhoneAlt, label: "Téléphone", value: "+229 00 00 00 00", href: "tel:+22900000000" },
-  { icon: FaWhatsapp, label: "WhatsApp", value: "+229 00 00 00 00", href: "https://wa.me/22900000000" },
+  { icon: FaPhoneAlt, label: "Téléphone", value: TELEPHONE_DISPLAY, href: TELEPHONE_LINK },
+  { icon: FaWhatsapp, label: "WhatsApp", value: WHATSAPP_DISPLAY, href: WHATSAPP_LINK },
   { icon: FaEnvelope, label: "Email", value: "contact@esc-formation.com", href: "mailto:contact@esc-formation.com" },
   { icon: FaMapMarkerAlt, label: "Adresse", value: "Cotonou, Bénin", href: null },
   { icon: FaClock, label: "Horaires", value: "Lun - Sam : 8h - 18h", href: null },

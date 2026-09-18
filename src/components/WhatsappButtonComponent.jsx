@@ -1,10 +1,11 @@
 import { FaWhatsapp } from "react-icons/fa";
+import { WHATSAPP_LINK } from "../data/contact";
 import "./WhatsappButton.css";
 
 function WhatsappButton() {
   return (
     <a
-      href="https://wa.me/22900000000"
+      href={WHATSAPP_LINK}
       target="_blank"
       rel="noreferrer"
       className="whatsapp-button"
