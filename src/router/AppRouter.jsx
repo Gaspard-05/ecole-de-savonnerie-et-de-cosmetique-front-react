@@ -11,6 +11,7 @@ import Temoignages from "../pages/Temoignages";
 import DeposerTemoignage from "../pages/DeposerTemoignage";
 import Contact from "../pages/Contact";
 import Preinscription from "../pages/Preinscription";
+import PreinscriptionSucces from "../pages/PreinscriptionSucces";
 import Connexion from "../pages/Connexion";
 import VerificationOtp from "../pages/VerificationOtp";
 import MentionsLegales from "../pages/MentionsLegales";
@@ -43,6 +44,7 @@ function AppRouter() {
           <Route path="/temoignages/deposer" element={<DeposerTemoignage />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/preinscription" element={<Preinscription />} />
+          <Route path="/preinscription/succes" element={<PreinscriptionSucces />} />
           <Route path="/connexion" element={<Connexion />} />
           <Route path="/verification-otp" element={<VerificationOtp />} />
           <Route path="/mentions-legales" element={<MentionsLegales />} />

@@ -1,4 +1,4 @@
-// Format international sans "+" ni espaces, exigé par wa.me
+// wa.me : sans + ni espaces
 export const WHATSAPP_NUMBER = "2290190319082";
 export const WHATSAPP_DISPLAY = "+229 01 90 31 90 82";
 

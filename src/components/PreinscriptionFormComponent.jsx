@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 import Button from "./ButtonComponent";
 import SelectDropdown from "./SelectDropdownComponent";
 import { formations as formationsMock, formatNomOption } from "../data/formations";
@@ -38,6 +38,7 @@ function validate(values) {
 }
 
 function PreinscriptionForm({ preselectedSlug }) {
+  const navigate = useNavigate();
   const [values, setValues] = useState(() => getInitialState(preselectedSlug));
   const [errors, setErrors] = useState({});
   const [submitting, setSubmitting] = useState(false);
@@ -66,14 +67,17 @@ function PreinscriptionForm({ preselectedSlug }) {
         formation: values.formationSlug,
         message: values.infosComplementaires || undefined,
       });
-      await Swal.fire({
-        icon: "success",
-        title: "Pré-Inscription enregistrée",
-        text: "Votre Pré-Inscription a été enregistrée. L'école vous contactera pour les procédures à suivre.",
-        confirmButtonColor: "#02462e",
+      // données envoyées en state (pas dans l'URL) pour la page de succès
+      const formation = formations.find((f) => f.slug === values.formationSlug);
+      navigate("/preinscription/succes", {
+        state: {
+          formation: formation?.nom ?? values.formationSlug,
+          nomComplet: values.nomComplet,
+          telephone: values.telephone,
+          email: values.email,
+          infosComplementaires: values.infosComplementaires,
+        },
       });
-      setValues(getInitialState(preselectedSlug));
-      setErrors({});
     } catch (err) {
       setErrors({ global: getApiErrorMessage(err, "Une erreur est survenue, merci de réessayer.") });
     } finally {
