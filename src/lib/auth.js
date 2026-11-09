@@ -32,13 +32,13 @@ export async function login(email, password) {
   setSession(data.token, data.user);
   return data.user;
 
-  // -- Version 2FA (à réactiver plus tard) --
+  // -- Version 2FA (réactivation plus tard) --
   // const { data } = await api.post("/login", { email, password });
   // return data;
 }
 
 // Gardée exportée (utilisée par VerificationOtp.jsx, page non supprimée mais plus
-// atteignable depuis Connexion.jsx tant que le 2FA est désactivé).
+// atteignable depuis Connexion.jsx car le 2FA est désactivé).
 export async function verifyOtpCode(email, code) {
   const { data } = await api.post("/login/verify-code", { email, code });
   setSession(data.token, data.user);
